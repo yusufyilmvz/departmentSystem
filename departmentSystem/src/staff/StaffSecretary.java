@@ -2,20 +2,20 @@ package staff;
 
 import academic.Academician;
 import departmentSystem.Department;
-import departmentSystem.Person;
 import course.Course;
 
-public class staffSecretary extends staff {
-    public staffSecretary(String identificationNumber, String name, String surname, Department department, String workingPlace,int workingHours) {
+public class StaffSecretary extends Staff {
+    public StaffSecretary(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours) {
         super(identificationNumber, name, surname, department, workingPlace,workingHours);
     }
 
     public void addCourseInstructor(Course course, Academician Instructor) throws Exception {
-        if (course.getAcademician().equals(null)){
-            throw new Exception("The course instructor is available");
+        if (course.getAcademician() == null){
+            course.setAcademician(Instructor);
         }
         else{
-            course.setAcademician(Instructor);
+
+            throw new Exception(String.format("The course instructor is available: %s",course.getAcademician().getName()));
         }
     }
     public void uppdateCourseInstructor(Course course,Academician Instructor){

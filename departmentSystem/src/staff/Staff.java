@@ -3,11 +3,11 @@ package staff;
 import departmentSystem.Department;
 import departmentSystem.Person;
 
-public class staff extends Person {
+public class Staff extends Person {
 
     private String workingPlace;
     private int workingHours;
-    public staff(String identificationNumber, String name, String surname, Department department,String workingPlace,int workingHours) {
+    public Staff(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours) {
         super(identificationNumber, name, surname, department);
         this.workingPlace = workingPlace;
         this.workingHours = workingHours;

@@ -18,6 +18,20 @@ public class Student extends Person {
         this.idNumber = idNumber;
         this.year = year;
         takenCourses = new ArrayList<CourseInformation>();
+    }
 
+    // Getters
+    // There is no setters because it is read-only
+
+    public String getIdNumber() {
+        return idNumber;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public ArrayList<CourseInformation> getTakenCourses() {
+        return takenCourses;
     }
 }

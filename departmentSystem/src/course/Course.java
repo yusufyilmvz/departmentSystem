@@ -24,13 +24,9 @@ public class Course {
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.credit = credit;
-        this.courseLocation = courseLocation;
         idOfTheStudents = new ArrayList<String>();
     }
 
-    public void addIdToIdOfTheStudents(String id) {
-        idOfTheStudents.add(id);
-    }
 
     // Getter-setters
     public int getCourseCode() {

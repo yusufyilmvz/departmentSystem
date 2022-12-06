@@ -7,8 +7,6 @@ public abstract class Person {
     private Department department;
 
     // Constructors
-
-
     public Person(String identificationNumber, String name, String surname, Department department) {
         this.identificationNumber = identificationNumber;
         this.name = name;

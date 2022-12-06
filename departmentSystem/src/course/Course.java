@@ -20,6 +20,11 @@ public class Course {
         idOfTheStudents = new ArrayList<String>();
     }
 
+    public void addIdToIdOfTheStudents(String id) {
+        idOfTheStudents.add(id);
+    }
+
+    // Getter-setters
     public int getCourseCode() {
         return courseCode;
     }
@@ -59,4 +64,6 @@ public class Course {
     public void setAcademician(Academician academician) {
         this.academician = academician;
     }
+
+
 }

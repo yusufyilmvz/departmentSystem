@@ -8,23 +8,6 @@ public class Main {
 //		System.out.println("Try 123");
 //		System.out.println("Hello OOP");
 		Academician academician = new Academician("151515", "Yusuf", "Yılmaz", Department.COMPUTERENGINEERING);
-		try {
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-			academician.addCourse(new Course());
-
-
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
 	}
 
 }

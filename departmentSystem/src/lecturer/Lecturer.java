@@ -49,4 +49,5 @@ public class Lecturer {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    //deneme
 }

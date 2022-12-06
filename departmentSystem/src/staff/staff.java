@@ -28,4 +28,7 @@ public class staff extends Person {
     public void setWorkingHors(int workingHors) {
         this.workingHours = workingHors;
     }
+
+
+
 }

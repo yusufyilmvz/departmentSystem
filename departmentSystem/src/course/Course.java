@@ -20,6 +20,14 @@ public class Course {
         idOfTheStudents = new ArrayList<String>();
     }
 
+    public Course(int courseCode, String courseName, int credit, String courseLocation) {
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+        this.credit = credit;
+        this.courseLocation = courseLocation;
+        idOfTheStudents = new ArrayList<String>();
+    }
+
     public void addIdToIdOfTheStudents(String id) {
         idOfTheStudents.add(id);
     }

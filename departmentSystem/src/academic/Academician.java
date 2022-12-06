@@ -16,11 +16,9 @@ public class Academician extends Person{
 
     public void addCourse(Course course) throws Exception{
         if (courses.size() >= 10) {
-            System.out.println("Worked");
-            throw new Exception(String.format("The lecturer who has %s id number access to max course number", super.getIdentificationNumber()));
+            throw new Exception(String.format("The lecturer who has \"%s\" id number access to max course number !", super.getIdentificationNumber()));
         } else {
             courses.add(course);
-            System.out.println(courses.size());
         }
 
     }

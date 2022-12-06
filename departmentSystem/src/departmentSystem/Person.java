@@ -1,31 +1,21 @@
-package lecturer;
-import course.Course;
+package departmentSystem;
 
-import java.util.ArrayList;
-
-public class Lecturer {
+public abstract class Person {
     private String identificationNumber;
     private String name;
     private String surname;
-    private ArrayList<Course> courses;
 
-    public Lecturer(String identificationNumber, String name, String surname) {
+    // Constructors
+    public Person(String identificationNumber, String name, String surname) {
         this.identificationNumber = identificationNumber;
         this.name = name;
         this.surname = surname;
-        courses = new ArrayList<Course>();
     }
 
-    // This function takes a course argument and add it to the list.
-    public void addCourse(Course course) throws Exception {
-        // If the lecturer has more than 10 course it throws an error.
-        if (courses.size() > 10) {
-            throw new Exception(String.format("The lecturer who has %s id number access to max course number", this.identificationNumber));
-        } else {
-            courses.add(course);
-        }
+    public Person() {
     }
 
+    // getter and setters
     public String getIdentificationNumber() {
         return identificationNumber;
     }
@@ -49,5 +39,4 @@ public class Lecturer {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-    //deneme123
 }

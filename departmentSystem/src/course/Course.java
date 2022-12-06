@@ -20,6 +20,7 @@ public class Course {
         idOfTheStudents = new ArrayList<String>();
     }
 
+    // This constructor contains obligatory attributes
     public Course(int courseCode, String courseName, int credit, String courseLocation) {
         this.courseCode = courseCode;
         this.courseName = courseName;

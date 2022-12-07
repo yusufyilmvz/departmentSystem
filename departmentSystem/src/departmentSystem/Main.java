@@ -26,6 +26,13 @@ public class Main {
 		catch (Exception e){
 			System.out.println(e.getMessage());
 		}
+		sekreter.uppdateCourseInstructor(mat101,academician2);
+		try {
+			sekreter.addCourseInstructor(mat101,academician);
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+		}
 	}
 
 }

@@ -3,6 +3,7 @@ package staff;
 import departmentSystem.Department;
 import departmentSystem.Person;
 
+
 public class Staff extends Person {
 
     private String workingPlace;

@@ -14,11 +14,11 @@ public class StaffSecretary extends Staff {
             course.setAcademician(Instructor);
         }
         else{
-
             throw new Exception(String.format("The course instructor is available: %s",course.getAcademician().getName()));
         }
     }
     public void uppdateCourseInstructor(Course course,Academician Instructor){
         course.setAcademician(Instructor);
+        System.out.printf("The instructor of the  course was %s changed to %s.\n",course.getCourseName(),course.getAcademician().getName());
     }
 }

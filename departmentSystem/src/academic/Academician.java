@@ -31,33 +31,8 @@ public class Academician extends Person{
     }
 
     // tam bitmedi algoritması kurulacak !!!!!! bu fonksiyon başka yere de alınabilir.
-    public void addStudentToTheCourse(Student student, Course course) throws Exception {
-        int tempValue = 0, indexOfCourse = 0;
-        for(Course tempCourse : courses) {
-            if (tempCourse == course) {
-                ++tempValue;
-                break;
-            }
-            ++indexOfCourse;
-        }
-        if (tempValue != 0) {
-            int tempValue2 = 0, indexOfStudent = 0;
-            for (Student tempStudent : courses.get(indexOfCourse).getStudents()) {
-                if (tempStudent == student) {
-                    ++tempValue2;
-                    break;
-                }
-                ++indexOfStudent;
-            }
-            if (tempValue2 != 0) {
-                courses.get(indexOfCourse).getStudents().add(student);
-            }
-            else {
-                throw new Exception("This course already contains the student who is tried to entrolling!");
-            }
-        }
-        else {
-            throw new Exception("There is no course that is given as an arguman!");
-        }
+
+    public ArrayList<Course> getCourses() {
+        return courses;
     }
 }

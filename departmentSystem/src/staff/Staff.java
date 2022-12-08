@@ -8,18 +8,20 @@ public class Staff extends Person {
 
     private String workingPlace;
     private int workingHours;
-    public Staff(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours) {
+    private String taskInformation;
+
+    public Staff(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours, String taskInformation) {
         super(identificationNumber, name, surname, department);
         this.workingPlace = workingPlace;
         this.workingHours = workingHours;
+        this.taskInformation = taskInformation;
     }
-
     // Method(s)
 
     @Override
     public String toString() {
-        return String.format("Identification number: %s\nName: %s\nSurname: %s\nDepartment: %s\nWorkingPlace: %s\nWorking hours: %d",
-                                    getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName(), getWorkingPlace(), getWorkingHours());
+        return String.format("Identification number: %s\nName: %s\nSurname: %s\nDepartment: %s\nWorkingPlace: %s\nWorking hours: %d\nTask Information: %s",
+                                    getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName(), getWorkingPlace(), getWorkingHours(), getTaskInformation());
     }
     public String getWorkingPlace() {
         return workingPlace;
@@ -37,6 +39,15 @@ public class Staff extends Person {
         this.workingHours = workingHors;
     }
 
+    public void setWorkingHours(int workingHours) {
+        this.workingHours = workingHours;
+    }
 
+    public String getTaskInformation() {
+        return taskInformation;
+    }
 
+    public void setTaskInformation(String taskInformation) {
+        this.taskInformation = taskInformation;
+    }
 }

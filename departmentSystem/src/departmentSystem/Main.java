@@ -34,7 +34,7 @@ public class Main {
 //		catch (Exception e){
 //			System.out.println(e.getMessage());
 //		}
-		Staff staff = new Staff("45353", "Yusuf", "Yılmaz", new Department(15,"CENG"), "Kantin", 15);
+		Staff staff = new Staff("45353", "Yusuf", "Yılmaz", new Department(15,"CENG"), "Kantin", 15, "Works in canteen");
 		System.out.println(staff);
 	}
 

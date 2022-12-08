@@ -5,8 +5,9 @@ import departmentSystem.Department;
 import course.Course;
 
 public class StaffSecretary extends Staff {
-    public StaffSecretary(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours) {
-        super(identificationNumber, name, surname, department, workingPlace,workingHours);
+
+    public StaffSecretary(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours, String taskInformation) {
+        super(identificationNumber, name, surname, department, workingPlace, workingHours, taskInformation);
     }
 
     public void addCourseInstructor(Course course, Academician Instructor) throws Exception {

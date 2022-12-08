@@ -51,14 +51,24 @@ public class Academician extends Person{
         }
     }
 
-    public void giveGraduateCertificate(UndergraduateStudent student) throws Exception {
+    public void giveUnderGraduateCertificate(UndergraduateStudent student) throws Exception {
         if (this == getDepartment().getHeadOfDepartment()) {
             if (student.getGPA() >= 2 && student.getTakenCourses().size() == 40) {
-
             }
         }
         else {
             throw new Exception(String.format("The academician %s %s does not have permission!", getName(), getSurname()));
         }
+
+    }
+    public void giveGraduateCertificate(GraduateStudent student) throws Exception {
+        if (this == getDepartment().getHeadOfDepartment()) {
+            if (student.getGPA() >= 2 && student.getTakenCourses().size() >= 7 ) {
+            }
+        }
+        else {
+            throw new Exception(String.format("The academician %s %s does not have permission!", getName(), getSurname()));
+        }
+
     }
 }

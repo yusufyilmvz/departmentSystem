@@ -33,7 +33,7 @@ public class StaffSecretary extends Staff {
             }
             ++indexOfCourse;
         }
-        if (tempValue != 0) {
+        if (tempValue == 0) {
             int tempValue2 = 0, indexOfStudent = 0;
             for (Student tempStudent : course.getAcademician().getCourses().get(indexOfCourse).getStudents()) {
                 if (tempStudent == student) {
@@ -42,7 +42,7 @@ public class StaffSecretary extends Staff {
                 }
                 ++indexOfStudent;
             }
-            if (tempValue2 != 0) {
+            if (tempValue2 == 0) {
                 course.getAcademician().getCourses().get(indexOfCourse).getStudents().add(student);
             }
             else {

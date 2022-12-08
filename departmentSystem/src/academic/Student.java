@@ -40,4 +40,9 @@ public class Student extends Person {
     public ArrayList<CourseInformation> getTakenCourses() {
         return takenCourses;
     }
+
+    public void addCourse(Course course, float midtermGrade, float finalGrade) {
+        CourseInformation courseInformation = new CourseInformation(course, midtermGrade, finalGrade);
+        takenCourses.add(courseInformation);
+    }
 }

@@ -1,5 +1,6 @@
 package course;
 import academic.Academician;
+import academic.Student;
 
 import java.util.ArrayList;
 
@@ -9,7 +10,7 @@ public class Course {
     private int credit;
     private String courseLocation;
     private Academician academician;
-    private ArrayList<String> idOfTheStudents;
+    private ArrayList<Student> students;
 
     public Course(int courseCode, String courseName, int credit, String courseLocation, Academician academician) {
         this.courseCode = courseCode;
@@ -17,7 +18,7 @@ public class Course {
         this.credit = credit;
         this.courseLocation = courseLocation;
         this.academician = academician;
-        idOfTheStudents = new ArrayList<String>();
+        students = new ArrayList<Student>();
     }
 
     // This constructor contains obligatory attributes
@@ -25,7 +26,7 @@ public class Course {
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.credit = credit;
-        idOfTheStudents = new ArrayList<String>();
+        students = new ArrayList<Student>();
     }
 
 
@@ -70,5 +71,7 @@ public class Course {
         this.academician = academician;
     }
 
-
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
 }

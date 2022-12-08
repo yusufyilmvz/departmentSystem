@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Student extends Person {
     private String idNumber;
     private int year;
+    private float GPA;
     private ArrayList<CourseInformation> takenCourses;
 
     // Constructor
@@ -37,12 +38,32 @@ public class Student extends Person {
         return year;
     }
 
+    public float getGPA() {
+        return GPA;
+    }
+
     public ArrayList<CourseInformation> getTakenCourses() {
         return takenCourses;
     }
 
-    public void addCourse(Course course, float midtermGrade, float finalGrade) {
-        CourseInformation courseInformation = new CourseInformation(course, midtermGrade, finalGrade);
+    public void addCourse(Course course) {
+        CourseInformation courseInformation = new CourseInformation(course);
         takenCourses.add(courseInformation);
+    }
+
+    public void updateGPA() {
+        float totalGrade = 0;
+        int totalCredit = 0;
+        for (CourseInformation courseInformation : takenCourses) {
+            if (courseInformation.getFinalGrade() != -1 && courseInformation.getMidtermGrade() != -1) {
+                totalCredit += courseInformation.getCourse().getCredit();
+                totalGrade += (float)((courseInformation.getFinalGrade() * 0.6) + (courseInformation.getMidtermGrade() * 0.4)) * courseInformation.getCourse().getCredit();
+            }
+        }
+        if (totalGrade != 0 && totalCredit != 0) {
+            GPA = (totalGrade / totalCredit) / 25;
+        } else {
+            GPA = 0;
+        }
     }
 }

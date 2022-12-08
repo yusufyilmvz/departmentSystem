@@ -1,4 +1,5 @@
 package academic;
+import course.CourseInformation;
 import departmentSystem.Department;
 import departmentSystem.Person;
 import course.Course;
@@ -30,9 +31,34 @@ public class Academician extends Person{
                 getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName());
     }
 
-    // tam bitmedi algoritması kurulacak !!!!!! bu fonksiyon başka yere de alınabilir.
-
     public ArrayList<Course> getCourses() {
         return courses;
+    }
+
+    public void addGradeToStudent(float midtermGrade, float finalGrade, Student student, Course course) {
+        int controlOfCourse = 0, indexOfCourse = 0;
+        for (CourseInformation tempCourse : student.getTakenCourses()) {
+            if (tempCourse.getCourse() == course) {
+                ++controlOfCourse;
+                break;
+            }
+            ++indexOfCourse;
+        }
+        if (controlOfCourse == 1) {
+            student.getTakenCourses().get(indexOfCourse).setMidtermGrade(midtermGrade);
+            student.getTakenCourses().get(indexOfCourse).setFinalGrade(finalGrade);
+            student.updateGPA();
+        }
+    }
+
+    public void giveGraduateCertificate(UndergraduateStudent student) throws Exception {
+        if (this == getDepartment().getHeadOfDepartment()) {
+            if (student.getGPA() >= 2 && student.getTakenCourses().size() == 40) {
+
+            }
+        }
+        else {
+            throw new Exception(String.format("The academician %s %s does not have permission!", getName(), getSurname()));
+        }
     }
 }

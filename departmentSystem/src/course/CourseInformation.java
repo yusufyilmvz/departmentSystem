@@ -7,10 +7,11 @@ public class CourseInformation {
     private float finalGrade;
 
     // Constructor
-    public CourseInformation(Course course, float midtermGrade, float finalGrade) {
+
+    public CourseInformation(Course course) {
         this.course = course;
-        this.midtermGrade = midtermGrade;
-        this.finalGrade = finalGrade;
+        midtermGrade = -1;
+        finalGrade = -1;
     }
 
     // Getter-setters

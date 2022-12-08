@@ -17,6 +17,9 @@ public abstract class Person {
     public Person() {
     }
 
+    // Abstract function(s)
+    public abstract String toString();
+
     // getter and setters
     public String getIdentificationNumber() {
         return identificationNumber;

@@ -14,6 +14,13 @@ public class Staff extends Person {
         this.workingHours = workingHours;
     }
 
+    // Method(s)
+
+    @Override
+    public String toString() {
+        return String.format("Identification number: %s\nName: %s\nSurname: %s\nDepartment: %s\nWorkingPlace: %s\nWorking hours: %d",
+                                    getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName(), getWorkingPlace(), getWorkingHours());
+    }
     public String getWorkingPlace() {
         return workingPlace;
     }
@@ -22,7 +29,7 @@ public class Staff extends Person {
         this.workingPlace = workingPlace;
     }
 
-    public int getWorkingHors() {
+    public int getWorkingHours() {
         return workingHours;
     }
 

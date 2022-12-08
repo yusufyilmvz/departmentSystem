@@ -20,6 +20,12 @@ public class Student extends Person {
         takenCourses = new ArrayList<CourseInformation>();
     }
 
+    // Method(s)
+    public String toString() {
+        return String.format("Identification number: %s\nName: %s\nSurname: %s\nDepartment: %s\nId number: %s\nYear: %d",
+                getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName(), getIdNumber(), getYear());
+    }
+
     // Getters
     // There is no setters because it is read-only
 

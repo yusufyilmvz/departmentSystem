@@ -15,6 +15,7 @@ public class Academician extends Person{
         courses = new ArrayList<Course>();
     }
 
+    // Methods
     // if number of the courses that attended to academician are more than 10, it throws an execption. Otherwise, it adds course to academician
     public void addCourse(Course course) throws Exception{
         if (courses.size() >= 10) {
@@ -22,5 +23,10 @@ public class Academician extends Person{
         } else {
             courses.add(course);
         }
+    }
+
+    public String toString() {
+        return String.format("Identification number: %s\nName: %s\nSurname: %s\nDepartment: %s",
+                getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName());
     }
 }

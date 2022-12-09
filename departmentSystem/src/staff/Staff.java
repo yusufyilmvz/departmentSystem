@@ -1,7 +1,7 @@
 package staff;
 
 import departmentSystem.Department;
-import departmentSystem.Person;
+import academic.Person;
 
 
 public class Staff extends Person {

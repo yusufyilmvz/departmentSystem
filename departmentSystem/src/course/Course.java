@@ -29,6 +29,14 @@ public class Course {
         students = new ArrayList<Student>();
     }
 
+    public String toString() {
+        if (academician == null) {
+            return String.format("Course code: %d\tCourse name: %s\tCredit: %d\tCourse Location: %s\tLecturer: %s",
+                    getCourseCode(), getCourseName(), getCredit(), getCourseLocation(), '-');
+        }
+        return String.format("Course code: %d\tCourse name: %s\tCredit: %d\tCourse Location: %s\tLecturer: %s %s",
+                            getCourseCode(), getCourseName(), getCredit(), getCourseLocation(), getAcademician().getName(), getAcademician().getSurname());
+    }
 
     // Getter-setters
     public int getCourseCode() {

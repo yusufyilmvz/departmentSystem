@@ -2,7 +2,6 @@ package academic;
 
 import course.CourseInformation;
 import departmentSystem.Department;
-import departmentSystem.Person;
 import course.Course;
 
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class Academician extends Person {
                 getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName());
     }
 
-    public ArrayList<Course> getCourses() {
+    protected ArrayList<Course> getCourses() {
         return courses;
     }
 
@@ -39,11 +38,31 @@ public class Academician extends Person {
             ++indexOfCourse;
         }
         if (controlOfCourse != 0) {
-            student.getTakenCourses().get(indexOfCourse).setMidtermGrade(midtermGrade);
-            student.getTakenCourses().get(indexOfCourse).setFinalGrade(finalGrade);
-            student.updateGPA();
+            int controller = 0;
+            for (Course tempCourse : courses) {
+                if (tempCourse == course) {
+                    ++controller;
+                    break;
+                }
+            }
+            if (controller != 0) {
+                student.getTakenCourses().get(indexOfCourse).setMidtermGrade(midtermGrade);
+                student.getTakenCourses().get(indexOfCourse).setFinalGrade(finalGrade);
+                student.updateGPA();
+            } else {
+                throw new Exception(String.format("The lecturer %s %s is not the lecturer of the lesson called %s !", getName(), getSurname(), course.getCourseName()));
+            }
+
         } else {
             throw new Exception(String.format("%s %s is not registered to the course called %s !", student.getName(), student.getSurname(), course.getCourseName()));
+        }
+    }
+
+    public void showCourses() {
+        int i = 0;
+        for (Course course : courses) {
+            System.out.printf("%d-\t", i);
+            System.out.println(course);
         }
     }
 

@@ -1,8 +1,6 @@
 package academic;
-import course.Course;
 import course.CourseInformation;
 import departmentSystem.Department;
-import departmentSystem.Person;
 
 import java.util.ArrayList;
 
@@ -27,6 +25,13 @@ public class Student extends Person {
                 getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName(), getIdNumber(), getYear());
     }
 
+    public void showTakenCourses() {
+        int i = 0;
+        for (CourseInformation courseInformation : takenCourses) {
+            System.out.printf("%d-\t", ++i);
+            System.out.println(courseInformation.getCourse());
+        }
+    }
     // Getters
     // There is no setters because it is read-only
 
@@ -42,16 +47,11 @@ public class Student extends Person {
         return GPA;
     }
 
-    public ArrayList<CourseInformation> getTakenCourses() {
+    protected ArrayList<CourseInformation> getTakenCourses() {
         return takenCourses;
     }
 
-    public void addCourse(Course course) {
-        CourseInformation courseInformation = new CourseInformation(course);
-        takenCourses.add(courseInformation);
-    }
-
-    public void updateGPA() {
+    protected void updateGPA() {
         float totalGrade = 0;
         int totalCredit = 0;
         for (CourseInformation courseInformation : takenCourses) {

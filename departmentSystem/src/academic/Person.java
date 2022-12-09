@@ -1,4 +1,6 @@
-package departmentSystem;
+package academic;
+
+import departmentSystem.Department;
 
 public abstract class Person {
     private String identificationNumber;
@@ -25,7 +27,7 @@ public abstract class Person {
         return identificationNumber;
     }
 
-    public void setIdentificationNumber(String identificationNumber) {
+    protected void setIdentificationNumber(String identificationNumber) {
         this.identificationNumber = identificationNumber;
     }
 
@@ -33,7 +35,7 @@ public abstract class Person {
         return name;
     }
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
@@ -41,7 +43,7 @@ public abstract class Person {
         return surname;
     }
 
-    public void setSurname(String surname) {
+    protected void setSurname(String surname) {
         this.surname = surname;
     }
 
@@ -49,7 +51,7 @@ public abstract class Person {
         return department;
     }
 
-    public void setDepartment(Department department) {
+    protected void setDepartment(Department department) {
         this.department = department;
     }
 }

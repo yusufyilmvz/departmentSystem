@@ -1,18 +1,17 @@
-package staff;
+package academic;
 
-import academic.Academician;
-import academic.Student;
 import course.CourseInformation;
 import departmentSystem.Department;
 import course.Course;
+import staff.Staff;
 
-public class StaffSecretary extends Staff {
+public class Secretary extends Staff {
 
-    public StaffSecretary(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours, String taskInformation) {
+    public Secretary(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours, String taskInformation) {
         super(identificationNumber, name, surname, department, workingPlace, workingHours, taskInformation);
     }
 
-    public StaffSecretary(String identificationNumber, String name, String surname, Department department) {
+    public Secretary(String identificationNumber, String name, String surname, Department department) {
         super(identificationNumber, name, surname, department);
     }
 

@@ -3,7 +3,7 @@ package departmentSystem;
 import academic.Academician;
 import academic.Student;
 import course.Course;
-import staff.StaffSecretary;
+import academic.Secretary;
 
 public class Tester {
     public static void main(String[] args) {
@@ -26,23 +26,24 @@ public class Tester {
         Student student3 = new Student("123456789120", "Cengiz", "Yılmaz", computerEngineering, "201180021", 2020);
         Student student4 = new Student("123456789120", "Murat", "Yılmaz", computerEngineering, "201180021", 2020);
 
-
-        StaffSecretary secretary = new StaffSecretary("98765432100", "Ali", "Veli", computerEngineering);
+        Secretary secretary = new Secretary("98765432100", "Ali", "Veli", computerEngineering);
         Academician academician = new Academician("15646460", "Uraz", "Yavan", computerEngineering);
         Academician academician2 = new Academician("15646460", "Ali", "Yavan", computerEngineering);
 
 
         try {
-            secretary.addCourseToAcademician(mat101, academician2);
+//            secretary.addCourseToAcademician(mat101, academician2);
+//            secretary.addCourseToAcademician(mat101, academician);
+
             secretary.addCourseToAcademician(mat101, academician);
-
-
             secretary.addStudentToTheCourse(student, mat101);
             secretary.addStudentToTheCourse(student, mat102);
             secretary.addStudentToTheCourse(student, mat103);
             secretary.addStudentToTheCourse(student, mat104);
             secretary.addStudentToTheCourse(student, mat105);
             secretary.addStudentToTheCourse(student, mat106);
+//            student.showTakenCourses();
+
 
             secretary.addStudentToTheCourse(student2, mat101);
             secretary.addStudentToTheCourse(student3, mat101);

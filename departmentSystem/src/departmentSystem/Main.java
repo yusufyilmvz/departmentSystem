@@ -1,9 +1,4 @@
 package departmentSystem;
-import academic.Academician;
-import academic.Student;
-import course.Course;
-import staff.Staff;
-import staff.StaffSecretary;
 
 public class Main {
 

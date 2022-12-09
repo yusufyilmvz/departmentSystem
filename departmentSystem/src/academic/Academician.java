@@ -5,7 +5,6 @@ import departmentSystem.Department;
 import departmentSystem.Person;
 import course.Course;
 
-import javax.swing.plaf.basic.BasicTreeUI;
 import java.util.ArrayList;
 
 public class Academician extends Person {

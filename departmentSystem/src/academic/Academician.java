@@ -1,12 +1,14 @@
 package academic;
+
 import course.CourseInformation;
 import departmentSystem.Department;
 import departmentSystem.Person;
 import course.Course;
 
+import javax.swing.plaf.basic.BasicTreeUI;
 import java.util.ArrayList;
 
-public class Academician extends Person{
+public class Academician extends Person {
     // Course list
     private ArrayList<Course> courses;
 
@@ -17,14 +19,6 @@ public class Academician extends Person{
     }
 
     // Methods
-    // if number of the courses that attended to academician are more than 10, it throws an execption. Otherwise, it adds course to academician
-    public void addCourse(Course course) throws Exception{
-        if (courses.size() >= 10) {
-            throw new Exception(String.format("The lecturer who has \"%s\" id number access to max course number !", super.getIdentificationNumber()));
-        } else {
-            courses.add(course);
-        }
-    }
 
     public String toString() {
         return String.format("Identification number: %s\nName: %s\nSurname: %s\nDepartment: %s",
@@ -35,7 +29,7 @@ public class Academician extends Person{
         return courses;
     }
 
-    public void addGradeToStudent(float midtermGrade, float finalGrade, Student student, Course course) {
+    public void addGradeToStudent(Student student, Course course, float midtermGrade, float finalGrade) throws Exception {
         int controlOfCourse = 0, indexOfCourse = 0;
         for (CourseInformation tempCourse : student.getTakenCourses()) {
             if (tempCourse.getCourse() == course) {
@@ -44,10 +38,12 @@ public class Academician extends Person{
             }
             ++indexOfCourse;
         }
-        if (controlOfCourse == 1) {
+        if (controlOfCourse != 0) {
             student.getTakenCourses().get(indexOfCourse).setMidtermGrade(midtermGrade);
             student.getTakenCourses().get(indexOfCourse).setFinalGrade(finalGrade);
             student.updateGPA();
+        } else {
+            throw new Exception(String.format("%s %s is not registered to the course called %s !", student.getName(), student.getSurname(), course.getCourseName()));
         }
     }
 
@@ -55,18 +51,17 @@ public class Academician extends Person{
         if (this == getDepartment().getHeadOfDepartment()) {
             if (student.getGPA() >= 2 && student.getTakenCourses().size() == 40) {
             }
-        }
-        else {
+        } else {
             throw new Exception(String.format("The academician %s %s does not have permission!", getName(), getSurname()));
         }
 
     }
+
     public void giveGraduateCertificate(GraduateStudent student) throws Exception {
         if (this == getDepartment().getHeadOfDepartment()) {
-            if (student.getGPA() >= 2 && student.getTakenCourses().size() >= 7 ) {
+            if (student.getGPA() >= 2 && student.getTakenCourses().size() >= 7) {
             }
-        }
-        else {
+        } else {
             throw new Exception(String.format("The academician %s %s does not have permission!", getName(), getSurname()));
         }
 

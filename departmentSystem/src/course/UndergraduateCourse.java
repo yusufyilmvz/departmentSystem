@@ -8,6 +8,6 @@ public class UndergraduateCourse extends Course{
     }
 
     public UndergraduateCourse(int courseCode, String courseName, int credit, String courseLocation) {
-        super(courseCode, courseName, credit, courseLocation);
+        super(courseCode, courseName, credit);
     }
 }

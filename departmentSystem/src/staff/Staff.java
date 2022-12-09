@@ -16,6 +16,11 @@ public class Staff extends Person {
         this.workingHours = workingHours;
         this.taskInformation = taskInformation;
     }
+
+    public Staff(String identificationNumber, String name, String surname, Department department) {
+        super(identificationNumber, name, surname, department);
+    }
+
     // Method(s)
 
     @Override

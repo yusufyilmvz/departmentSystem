@@ -7,6 +7,7 @@ import course.Course;
 
 import java.util.ArrayList;
 
+
 public class Academician extends Person {
     // Course list
     private ArrayList<Course> courses;

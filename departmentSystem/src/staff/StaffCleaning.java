@@ -1,8 +1,6 @@
 package staff;
 
 import departmentSystem.Department;
-import academic.Academician;
-import course.Course;
 
 public class StaffCleaning extends Staff {
     public StaffCleaning(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours, String taskInformation) {

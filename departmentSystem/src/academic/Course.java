@@ -1,4 +1,4 @@
-package course;
+package academic;
 import academic.Academician;
 import academic.Student;
 
@@ -79,7 +79,8 @@ public class Course {
         this.academician = academician;
     }
 
-    public ArrayList<Student> getStudents() {
+    // Obligatory part
+    protected ArrayList<Student> getStudents() {
         return students;
     }
 }

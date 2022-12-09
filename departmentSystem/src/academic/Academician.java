@@ -2,7 +2,6 @@ package academic;
 
 import course.CourseInformation;
 import departmentSystem.Department;
-import course.Course;
 
 import java.util.ArrayList;
 
@@ -30,6 +29,7 @@ public class Academician extends Person {
 
     public void addGradeToStudent(Student student, Course course, float midtermGrade, float finalGrade) throws Exception {
         int controlOfCourse = 0, indexOfCourse = 0;
+        // Controlling the student has the course or not
         for (CourseInformation tempCourse : student.getTakenCourses()) {
             if (tempCourse.getCourse() == course) {
                 ++controlOfCourse;
@@ -37,14 +37,17 @@ public class Academician extends Person {
             }
             ++indexOfCourse;
         }
+        // Control part
         if (controlOfCourse != 0) {
             int controller = 0;
+            // Controlling the academician is the lecturer of course or not
             for (Course tempCourse : courses) {
                 if (tempCourse == course) {
                     ++controller;
                     break;
                 }
             }
+            // Control part
             if (controller != 0) {
                 student.getTakenCourses().get(indexOfCourse).setMidtermGrade(midtermGrade);
                 student.getTakenCourses().get(indexOfCourse).setFinalGrade(finalGrade);

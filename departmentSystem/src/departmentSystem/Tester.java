@@ -2,7 +2,7 @@ package departmentSystem;
 
 import academic.Academician;
 import academic.Student;
-import course.Course;
+import academic.Course;
 import academic.Secretary;
 
 public class Tester {
@@ -41,8 +41,9 @@ public class Tester {
             secretary.addStudentToTheCourse(student, mat103);
             secretary.addStudentToTheCourse(student, mat104);
             secretary.addStudentToTheCourse(student, mat105);
-            secretary.addStudentToTheCourse(student, mat106);
+//            secretary.addStudentToTheCourse(student, mat106);
 //            student.showTakenCourses();
+            System.out.println(student.isTakeCourse(mat106));
 
 
             secretary.addStudentToTheCourse(student2, mat101);

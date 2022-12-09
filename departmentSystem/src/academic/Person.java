@@ -16,6 +16,12 @@ public abstract class Person {
         this.department = department;
     }
 
+    public Person(String identificationNumber, String name, String surname) {
+        this.identificationNumber = identificationNumber;
+        this.name = name;
+        this.surname = surname;
+    }
+
     public Person() {
     }
 

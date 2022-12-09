@@ -2,7 +2,6 @@ package academic;
 
 import course.CourseInformation;
 import departmentSystem.Department;
-import course.Course;
 import staff.Staff;
 
 public class Secretary extends Staff {
@@ -15,12 +14,16 @@ public class Secretary extends Staff {
         super(identificationNumber, name, surname, department);
     }
 
-    public void uppdateCourseInstructor(Course course, Academician Instructor) throws Exception { // ferruh bunlara if koşulu ekledim kursun hocası yoksa güncellenemez gibi
+    public void updateCourseInstructor(Course course, Academician instructor) throws Exception { // ferruh bunlara if koşulu ekledim kursun hocası yoksa güncellenemez gibi
         if (course.getAcademician() == null) {
             throw new Exception(String.format("The course called %s does not have any instructor", course.getCourseName()));
         }
-        course.setAcademician(Instructor);
-        System.out.printf("The instructor of the  course was %s changed to %s.\n", course.getCourseName(), course.getAcademician().getName());
+        if (course.getAcademician() == instructor) {
+            throw new Exception(String.format("The instructor %s %s is already the lecturer of the course called %s", instructor.getName(), instructor.getSurname(), course.getCourseName()));
+        } else {
+            course.setAcademician(instructor);
+            System.out.printf("The instructor of the  course was %s changed to %s.\n", course.getCourseName(), course.getAcademician().getName());
+        }
     }
 
     public void addStudentToTheCourse(Student student, Course course) throws Exception {

@@ -1,5 +1,7 @@
 package course;
 
+import academic.Course;
+
 public class CourseInformation {
     // Variables
     private Course course;

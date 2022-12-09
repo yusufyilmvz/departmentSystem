@@ -12,6 +12,13 @@ public class Student extends Person {
 
     // Constructor
     // Obligatory part - There mustn't null contructor
+    public Student(String identificationNumber, String name, String surname, String idNumber, int year) {
+        super(identificationNumber, name, surname);
+        this.idNumber = idNumber;
+        this.year = year;
+        takenCourses = new ArrayList<CourseInformation>();
+    }
+
     public Student(String identificationNumber, String name, String surname, Department department, String idNumber, int year) {
         super(identificationNumber, name, surname, department);
         this.idNumber = idNumber;
@@ -65,5 +72,13 @@ public class Student extends Person {
         } else {
             GPA = 0;
         }
+    }
+    public boolean isTakeCourse(Course course) {
+        for (CourseInformation tempCourse : takenCourses) {
+            if (tempCourse.getCourse() == course) {
+                return true;
+            }
+        }
+        return false;
     }
 }

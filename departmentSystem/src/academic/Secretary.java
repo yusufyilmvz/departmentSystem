@@ -13,7 +13,7 @@ public class Secretary extends Staff {
         super(identificationNumber, name, surname, department);
     }
 
-    public void updateCourseInstructor(Course course, Academician instructor) throws Exception { // ferruh bunlara if koşulu ekledim kursun hocası yoksa güncellenemez gibi
+    public void updateCourseInstructor(Course course, Academician instructor) throws Exception {
         if (course.getAcademician() == null) {
             throw new Exception(String.format("The course called %s does not have any instructor", course.getCourseName()));
         }

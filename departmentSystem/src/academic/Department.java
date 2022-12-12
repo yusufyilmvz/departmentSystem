@@ -1,21 +1,27 @@
-package departmentSystem;
+package academic;
 
 import academic.Academician;
+import academic.Student;
+
+import java.util.ArrayList;
 
 public class Department {
     // Attributes
     private int departmentId;
     private String departmentName;
     private Academician headOfDepartment;
+    private ArrayList<Student> studentsInDepartment;
 
     // Constructors
     public Department(int departmentId, String departmentName, Academician headOfDepartment) {
+        studentsInDepartment = new ArrayList<Student>();
         this.departmentId = departmentId;
         this.departmentName = departmentName;
         this.headOfDepartment = headOfDepartment;
     }
 
     public Department(int departmentId, String departmentName) {
+        studentsInDepartment = new ArrayList<Student>();
         this.departmentId = departmentId;
         this.departmentName = departmentName;
     }
@@ -42,7 +48,11 @@ public class Department {
         return departmentId;
     }
 
-    public void setDepartmentId(int departmentId) {
+    protected void setDepartmentId(int departmentId) {
         this.departmentId = departmentId;
+    }
+
+    public ArrayList<Student> getStudentsInDepartment() {
+        return studentsInDepartment;
     }
 }

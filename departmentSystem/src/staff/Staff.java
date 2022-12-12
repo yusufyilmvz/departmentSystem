@@ -1,6 +1,6 @@
 package staff;
 
-import departmentSystem.Department;
+import academic.Department;
 import academic.Person;
 
 

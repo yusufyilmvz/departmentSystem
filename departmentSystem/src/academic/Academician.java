@@ -1,7 +1,6 @@
 package academic;
 
 import course.CourseInformation;
-import departmentSystem.Department;
 
 import java.util.ArrayList;
 

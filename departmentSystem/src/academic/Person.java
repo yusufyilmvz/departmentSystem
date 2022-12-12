@@ -1,7 +1,5 @@
 package academic;
 
-import departmentSystem.Department;
-
 public abstract class Person {
     private String identificationNumber;
     private String name;
@@ -57,7 +55,7 @@ public abstract class Person {
         return department;
     }
 
-    protected void setDepartment(Department department) {
+    protected void setDepartment(Department department) throws Exception {
         this.department = department;
     }
 }

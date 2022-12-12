@@ -1,7 +1,6 @@
 package academic;
 
 import course.CourseInformation;
-import departmentSystem.Department;
 import staff.Staff;
 
 public class Secretary extends Staff {
@@ -68,6 +67,40 @@ public class Secretary extends Staff {
         }
     }
 
+    public void setDepartmentToStudent(Student student, Department department) throws Exception{
+        if (student.getDepartment() != null) {
+            throw new Exception(String.format("The student who is %s %s has already a course", getName(), getSurname()));
+        } else {
+            student.setDepartment(department);
+            department.getStudentsInDepartment().add(student);
+        }
+    }
+
+    public void updateDepartmentOfStudent(Student student, Department department) throws Exception {
+        if (student.getDepartment() != null) {
+            student.getDepartment().getStudentsInDepartment().remove(student);
+            student.setDepartment(department);
+            department.getStudentsInDepartment().add(student);
+        } else {
+            throw new Exception(String.format("The student who is %s %s was not entered any courses", getName(), getSurname()));
+        }
+    }
+
+    public void setHeadOfDepartment(Department department, Academician academician) throws Exception{
+        if (department.getHeadOfDepartment() != null) {
+            throw new Exception(String.format("The department called %s has already a head academician: %s %s", department.getDepartmentName(), academician.getName(), academician.getSurname()));
+        } else {
+            department.setHeadOfDepartment(academician);
+        }
+    }
+
+    public void updateHeadOfDepartment(Department department, Academician academician) throws Exception{
+        if (department.getHeadOfDepartment() == null) {
+            throw new Exception(String.format("The department called %s has no head academician: %s %s", department.getDepartmentName(), academician.getName(), academician.getSurname()));
+        } else {
+            department.setHeadOfDepartment(academician);
+        }
+    }
 }
 
 

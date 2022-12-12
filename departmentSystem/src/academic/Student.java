@@ -1,6 +1,5 @@
 package academic;
 import course.CourseInformation;
-import departmentSystem.Department;
 
 import java.util.ArrayList;
 
@@ -24,6 +23,7 @@ public class Student extends Person {
         this.idNumber = idNumber;
         this.year = year;
         takenCourses = new ArrayList<CourseInformation>();
+        department.getStudentsInDepartment().add(this);
     }
 
     // Method(s)
@@ -81,4 +81,5 @@ public class Student extends Person {
         }
         return false;
     }
+
 }

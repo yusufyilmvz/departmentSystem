@@ -1,7 +1,5 @@
 package academic;
 
-import departmentSystem.Department;
-
 public class GraduateStudent extends Student{
     private String degreeType; // master or doctoral etc.
     private String degreeInformation;

@@ -79,7 +79,7 @@ public class Academician extends Person {
         } else {
             // Controlling the instructor is head of department or not
             if (this == getDepartment().getHeadOfDepartment()) {
-                if (student.getGPA() >= 2 && student.getTakenCourses().size() >= 3) {
+                if (student.getGPA() >= 2 && student.getTakenCourses().size() >= 40) {
                     student.setFinished(true);
                 } else {
                     throw new Exception(String.format("The student who is %s %s does not have required conditions.(at least 40 courses and at least 2.0 grade avarage)", student.getName(), student.getSurname()));

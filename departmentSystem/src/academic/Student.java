@@ -1,12 +1,15 @@
 package academic;
+import area.Area;
 import course.CourseInformation;
 
 import java.util.ArrayList;
 
-public class Student extends Person {
+public abstract class Student extends Person {
     private String idNumber;
     private int year;
     private float GPA;
+    private boolean isFinished;
+    private Area where;
     private ArrayList<CourseInformation> takenCourses;
 
     // Constructor
@@ -28,8 +31,12 @@ public class Student extends Person {
 
     // Method(s)
     public String toString() {
-        return String.format("Identification number: %s\nName: %s\nSurname: %s\nDepartment: %s\nId number: %s\nYear: %d",
+        return String.format("Identification number: %s\nName: %s\nSurname: %s\nDepartment: %s\nId number: %s\nYear: %d\n",
                 getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName(), getIdNumber(), getYear());
+    }
+
+    public void goTo(Area area) {
+        this.where = area;
     }
 
     public void showTakenCourses() {
@@ -54,8 +61,22 @@ public class Student extends Person {
         return GPA;
     }
 
+    public Area getWhere() {
+        return where;
+    }
+
     protected ArrayList<CourseInformation> getTakenCourses() {
         return takenCourses;
+    }
+
+    // For finishing degree
+
+    public boolean isFinished() {
+        return isFinished;
+    }
+
+    protected void setFinished(boolean finished) {
+        isFinished = finished;
     }
 
     protected void updateGPA() {

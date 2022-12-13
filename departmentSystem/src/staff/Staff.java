@@ -4,7 +4,7 @@ import academic.Department;
 import academic.Person;
 
 
-public class Staff extends Person {
+public abstract class Staff extends Person {
 
     private String workingPlace;
     private int workingHours;

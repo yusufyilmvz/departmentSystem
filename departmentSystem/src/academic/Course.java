@@ -4,7 +4,7 @@ import academic.Student;
 
 import java.util.ArrayList;
 
-public class Course {
+public abstract class Course {
     private int courseCode;
     private String courseName;
     private int credit;

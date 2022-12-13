@@ -20,26 +20,54 @@ public class Secretary extends Staff {
         if (course.getAcademician() == instructor) {
             throw new Exception(String.format("The instructor %s %s is already the lecturer of the course called %s", instructor.getName(), instructor.getSurname(), course.getCourseName()));
         } else {
+            course.getAcademician().getCourses().remove(course);
             course.setAcademician(instructor);
             System.out.printf("The instructor of the  course was %s changed to %s.\n", course.getCourseName(), course.getAcademician().getName());
         }
     }
 
-    public void addStudentToTheCourse(Student student, Course course) throws Exception {
-        int controller = 0;
-        for (CourseInformation tempCourseInformation : student.getTakenCourses()) {
-            if (tempCourseInformation.getCourse() == course) {
-                ++controller;
-                break;
+    public void addUndergraduateStudentToTheCourse(UndergraduateStudent student, UndergraduateCourse course) throws Exception {
+        if (student.isFinished()) {
+            throw new Exception(String.format("Course adding error: the student who is %s %s graduated", student.getName(), student.getSurname()));
+        } else {
+            int controller = 0;
+            for (CourseInformation tempCourseInformation : student.getTakenCourses()) {
+                if (tempCourseInformation.getCourse() == course) {
+                    ++controller;
+                    break;
+                }
+            }
+            if (controller != 1) {
+                CourseInformation courseInformation = new CourseInformation(course);
+                student.getTakenCourses().add(courseInformation);
+                course.getStudents().add(student);
+            } else {
+                throw new Exception(String.format("%s %s have already taken the course called %s", student.getName(), student.getSurname(), course.getCourseName()));
             }
         }
-        if (controller != 1) {
-            CourseInformation courseInformation = new CourseInformation(course);
-            student.getTakenCourses().add(courseInformation);
-            course.getStudents().add(student);
+
+    }
+
+    public void addGraduateStudentToTheCourse(GraduateStudent student, GraduateCourse course) throws Exception {
+        if (student.isFinished()) {
+            throw new Exception(String.format("Course adding error: the student who is %s %s graduated", student.getName(), student.getSurname()));
         } else {
-            throw new Exception(String.format("%s %s have already taken the course called %s", student.getName(), student.getSurname(), course.getCourseName()));
+            int controller = 0;
+            for (CourseInformation tempCourseInformation : student.getTakenCourses()) {
+                if (tempCourseInformation.getCourse() == course) {
+                    ++controller;
+                    break;
+                }
+            }
+            if (controller != 1) {
+                CourseInformation courseInformation = new CourseInformation(course);
+                student.getTakenCourses().add(courseInformation);
+                course.getStudents().add(student);
+            } else {
+                throw new Exception(String.format("%s %s have already taken the course called %s", student.getName(), student.getSurname(), course.getCourseName()));
+            }
         }
+
     }
 
     // if number of the courses that attended to academician are more than 10, it throws an execption. Otherwise, it adds course to academician
@@ -68,22 +96,32 @@ public class Secretary extends Staff {
     }
 
     public void setDepartmentToStudent(Student student, Department department) throws Exception{
-        if (student.getDepartment() != null) {
-            throw new Exception(String.format("The student who is %s %s has already a course", getName(), getSurname()));
+        if (student.isFinished()) {
+            throw new Exception(String.format("Department setting error: the student who is %s %s graduated", student.getName(), student.getSurname()));
         } else {
-            student.setDepartment(department);
-            department.getStudentsInDepartment().add(student);
+            if (student.getDepartment() != null) {
+                throw new Exception(String.format("The student who is %s %s has already a department", getName(), getSurname()));
+            } else {
+                student.setDepartment(department);
+                department.getStudentsInDepartment().add(student);
+            }
         }
+
     }
 
     public void updateDepartmentOfStudent(Student student, Department department) throws Exception {
-        if (student.getDepartment() != null) {
-            student.getDepartment().getStudentsInDepartment().remove(student);
-            student.setDepartment(department);
-            department.getStudentsInDepartment().add(student);
+        if (student.isFinished()) {
+            throw new Exception(String.format("Department updating error: the student who is %s %s graduated", student.getName(), student.getSurname()));
         } else {
-            throw new Exception(String.format("The student who is %s %s was not entered any courses", getName(), getSurname()));
+            if (student.getDepartment() != null) {
+                student.getDepartment().getStudentsInDepartment().remove(student);
+                student.setDepartment(department);
+                department.getStudentsInDepartment().add(student);
+            } else {
+                throw new Exception(String.format("The student who is %s %s was not entered any department", getName(), getSurname()));
+            }
         }
+
     }
 
     public void setHeadOfDepartment(Department department, Academician academician) throws Exception{

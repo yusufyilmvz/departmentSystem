@@ -5,8 +5,8 @@ import staff.Staff;
 
 public class Secretary extends Staff {
 
-    public Secretary(String identificationNumber, String name, String surname, Department department, String workingPlace, int workingHours, String taskInformation) {
-        super(identificationNumber, name, surname, department, workingPlace, workingHours, taskInformation);
+    public Secretary(String identificationNumber, String name, String surname, Department department, int workingHours, String taskInformation) {
+        super(identificationNumber, name, surname, department,  workingHours, taskInformation);
     }
 
     public Secretary(String identificationNumber, String name, String surname, Department department) {

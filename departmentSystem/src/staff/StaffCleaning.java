@@ -10,9 +10,11 @@ public class StaffCleaning extends Staff {
         super(identificationNumber, name, surname, department,workingHours, taskInformation);
     }
 
-    public void cleanedPlace(StaffCleaning cleaner, Area area){
-        System.out.printf("The %s was cleaned by %s,the cleaner.",cleaner.getName(),area.getCode());
+    public void cleanedPlace(StaffCleaning cleaner, Area area) throws Exception {
+        if (!cleaner.getWorkingPlaces().contains(area)) {
+            throw new Exception(String.format("The area %s is not allowed for %s %s", area.getCode(), cleaner.getName(), cleaner.getSurname()));
+        } else {
+            System.out.printf("The %s was cleaned by %s,the cleaner.", cleaner.getName(), area.getCode());
         }
-
-
+    }
 }

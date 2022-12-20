@@ -1,6 +1,7 @@
 package academic;
 import academic.Academician;
 import academic.Student;
+import area.AreaAmphi;
 
 import java.util.ArrayList;
 
@@ -10,6 +11,7 @@ public abstract class Course {
     private int credit;
     private String courseLocation;
     private Academician academician;
+    private AreaAmphi classLessonGiven;
     private ArrayList<Student> students;
 
     public Course(int courseCode, String courseName, int credit, String courseLocation, Academician academician) {
@@ -77,6 +79,14 @@ public abstract class Course {
 
     public void setAcademician(Academician academician) {
         this.academician = academician;
+    }
+
+    public AreaAmphi getClassLessonGiven() {
+        return classLessonGiven;
+    }
+
+    protected void setClassLessonGiven(AreaAmphi classLessonGiven) {
+        this.classLessonGiven = classLessonGiven;
     }
 
     // Obligatory part

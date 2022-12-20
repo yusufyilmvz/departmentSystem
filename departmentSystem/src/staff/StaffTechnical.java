@@ -18,8 +18,4 @@ public class StaffTechnical extends Staff {
             System.out.printf("The %s was fixed by %s,the cleaner.", this.getName(), area.getCode());
         }
     }
-    /*
-    * ArizaVar
-    * ArizaTamirEdildi
-    */
 }

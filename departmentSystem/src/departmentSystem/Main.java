@@ -35,9 +35,7 @@ public class Main {
 		Area amphi3 = new AreaAmphi("206",40);
 		Area amphi4 = new AreaAmphi("207",40);
 
-
-
-
+		
 		try {
 			secretary.addWorkingPlaceToStaff(cleaner1, are1);
 			secretary.addWorkingPlaceToStaff(cleaner1, are1);

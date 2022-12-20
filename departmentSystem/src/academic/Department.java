@@ -1,7 +1,6 @@
 package academic;
 
-import academic.Academician;
-import academic.Student;
+import staff.Staff;
 
 import java.util.ArrayList;
 
@@ -11,6 +10,7 @@ public class Department {
     private String departmentName;
     private Academician headOfDepartment;
     private ArrayList<Student> studentsInDepartment;
+    private ArrayList<Staff> staffsInDepartment;
 
     // Constructors
     public Department(int departmentId, String departmentName, Academician headOfDepartment) {
@@ -54,5 +54,9 @@ public class Department {
 
     public ArrayList<Student> getStudentsInDepartment() {
         return studentsInDepartment;
+    }
+
+    public ArrayList<Staff> getStaffsInDepartment() {
+        return staffsInDepartment;
     }
 }

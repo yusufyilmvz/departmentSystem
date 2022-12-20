@@ -19,12 +19,14 @@ public abstract class Staff extends Person {
         this.taskInformation = taskInformation;
         workingPlaces = new ArrayList<Area>();
         salary = 5500;
+        department.getStaffsInDepartment().add(this);
     }
 
     public Staff(String identificationNumber, String name, String surname, Department department) {
         super(identificationNumber, name, surname, department);
         workingPlaces = new ArrayList<Area>();
         salary = 5500;
+        department.getStaffsInDepartment().add(this);
     }
 
     // Method(s)

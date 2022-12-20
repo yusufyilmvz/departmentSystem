@@ -35,4 +35,13 @@ public abstract class Area{
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+    @Override
+    public String toString() {
+        return "Area{" +
+                "code='" + code + '\'' +
+                ", capacity=" + capacity +
+                '}';
+    }
+
 }

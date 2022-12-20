@@ -26,6 +26,7 @@ public class Academician extends Person {
         return courses;
     }
 
+    // Obligatory part
     public void addGradeToStudent(Student student, Course course, float midtermGrade, float finalGrade) throws Exception {
         if (student.isFinished()) {
             throw new Exception(String.format("Grade adding error: the student who is %s %s graduated", student.getName(), student.getSurname()));
@@ -116,6 +117,12 @@ public class Academician extends Person {
             } else {
                 throw new Exception(String.format("The academician %s %s does not have permission!", getName(), getSurname()));
             }
+        }
+    }
+
+    public void showGivenCourses() {
+        for (Course course : getCourses()) {
+            System.out.println(course);
         }
     }
 }

@@ -47,6 +47,7 @@ public abstract class Student extends Person {
         }
     }
     // Getters
+    // Obligatory part
     // There is no setters because it is read-only
 
     public String getIdNumber() {
@@ -101,6 +102,20 @@ public abstract class Student extends Person {
             }
         }
         return false;
+    }
+
+    // Obligatory part controlling the course that taken by student has a grade or not!!
+    public void printTakenCoursesWithGrades() throws Exception{
+        for (CourseInformation courseInformation : getTakenCourses()) {
+            if (courseInformation.getCourse() == null) {
+                throw new Exception(String.format("Student %s %s has non-existing course", getName(), getSurname()));
+            }
+            else if (courseInformation.getMidtermGrade() == -1 || courseInformation.getFinalGrade() == -1) {
+                throw new Exception(String.format("Some courses that is taken by %s %s have not grade(s)", getName(), getSurname()));
+            } else {
+                System.out.printf("%s: midterm: %f final: %f", courseInformation.getCourse().getCourseCode(), courseInformation.getMidtermGrade(), courseInformation.getFinalGrade());
+            }
+        }
     }
 
 }

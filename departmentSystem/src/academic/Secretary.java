@@ -72,6 +72,7 @@ public class Secretary extends Staff {
 
     }
 
+    // Obligatory part
     // if number of the courses that attended to academician are more than 10, it throws an execption. Otherwise, it adds course to academician
     public void addCourseToAcademician(Course course, Academician academician) throws Exception {
         if (course.getAcademician() == null) {

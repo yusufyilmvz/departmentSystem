@@ -20,9 +20,6 @@ public abstract class Person {
         this.surname = surname;
     }
 
-    public Person() {
-    }
-
     // Abstract function(s)
     public abstract String toString();
 
@@ -31,24 +28,12 @@ public abstract class Person {
         return identificationNumber;
     }
 
-    protected void setIdentificationNumber(String identificationNumber) {
-        this.identificationNumber = identificationNumber;
-    }
-
     public String getName() {
         return name;
     }
 
-    protected void setName(String name) {
-        this.name = name;
-    }
-
     public String getSurname() {
         return surname;
-    }
-
-    protected void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public Department getDepartment() {

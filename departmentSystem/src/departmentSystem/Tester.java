@@ -35,10 +35,13 @@ public class Tester {
             secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse1);
             secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse2);
             secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse3);
+//            undergraduateStudent1.printTakenCoursesWithGrades();
 
             secretary.addCourseToAcademician(graduateCourse1, academician);
             secretary.addCourseToAcademician(graduateCourse2, academician);
             secretary.addCourseToAcademician(graduateCourse3, academician);
+
+//            academician.showGivenCourses();
 
             secretary.addCourseToAcademician(undergraduateCourse1, academician2);
             secretary.addCourseToAcademician(undergraduateCourse2, academician2);

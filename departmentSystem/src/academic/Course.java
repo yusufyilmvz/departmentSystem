@@ -12,6 +12,7 @@ public abstract class Course {
     private String courseLocation;
     private Academician academician;
     private AreaAmphi classLessonGiven;
+    // Obligatory part
     private ArrayList<Student> students;
 
     public Course(int courseCode, String courseName, int credit, String courseLocation, Academician academician) {
@@ -89,7 +90,7 @@ public abstract class Course {
         this.classLessonGiven = classLessonGiven;
     }
 
-    // Obligatory part
+    // Obligatory part the list is protected, so in the main function course can not add to the student list
     protected ArrayList<Student> getStudents() {
         return students;
     }

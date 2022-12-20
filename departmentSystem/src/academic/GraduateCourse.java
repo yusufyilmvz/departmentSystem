@@ -9,8 +9,4 @@ public class GraduateCourse extends Course{
         super(courseCode, courseName, credit);
     }
 
-    @Override
-    public String toString(){
-        return super.toString() + String.format("");
-    }
 }

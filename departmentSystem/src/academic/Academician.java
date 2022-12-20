@@ -9,6 +9,7 @@ public class Academician extends Person {
     // Course list
     private ArrayList<Course> courses;
 
+
     // Constructor
     public Academician(String identificationNumber, String name, String surname, Department department) {
         super(identificationNumber, name, surname, department);

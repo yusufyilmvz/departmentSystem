@@ -1,13 +1,14 @@
 package academic;
 
 public abstract class Person {
+    private int id;
     private String identificationNumber;
     private String name;
     private String surname;
     private Department department;
 
     // Constructors
-    public Person(String identificationNumber, String name, String surname, Department department) {
+    public Person(int id, String identificationNumber, String name, String surname, Department department) {
         this.identificationNumber = identificationNumber;
         this.name = name;
         this.surname = surname;
@@ -38,6 +39,10 @@ public abstract class Person {
 
     public Department getDepartment() {
         return department;
+    }
+
+    public int getId() {
+        return id;
     }
 
     protected void setDepartment(Department department) throws Exception {

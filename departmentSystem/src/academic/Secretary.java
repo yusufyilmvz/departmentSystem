@@ -165,6 +165,10 @@ public class Secretary extends Staff {
             throw new Exception(String.format("Update fail: The course %s has no an amphi", course.getCourseName()));
         }
     }
+
+    public void updateWorkingTopicOfResearchFellow(ResearchFellow researchFellow, String workingTopic) {
+        researchFellow.setCurrentResearchTopic(workingTopic);
+    }
 }
 
 

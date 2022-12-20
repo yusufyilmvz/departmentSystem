@@ -56,20 +56,27 @@ public abstract class Area{
                 ", capacity=" + capacity +
                 '}';
     }
-    public int calculateArea()
-    {
-        System.out.printf("The area of %s is %d square meters",this.code,this.weight*this.height);
-        return this.weight*this.height;
-    }
-    public void isLargerThan(Area area){
-        if (this.calculateArea()>area.calculateArea()){
-            System.out.printf("The area of %s is larger than %s.",this.code,area.getCode());
+    public int calculateArea()throws Exception {
+        if (this.getWeight() == 0 || this.getHeight() == 0){
+            throw new Exception(String.format("There cannot be any area in %s",this.getCode()));
         }
-        else if(this.calculateArea()>area.calculateArea()){
-            System.out.printf("The area of %s is larger than %s.",area.getCode(),this.code);
+        System.out.printf("The area of %s is %d square meters",this.getCode(),this.getWeight()*this.getHeight());
+        return this.getWeight()*this.getHeight();
+    }
+    public void isLargerThan(Area area)throws Exception{
+        if (this.calculateArea() != 0 && area.calculateArea() != 0){
+            if (this.calculateArea()>area.calculateArea()){
+                System.out.printf("The area of %s is larger than %s.",this.getCode(),area.getCode());
+            }
+            else if(this.calculateArea()>area.calculateArea()){
+                System.out.printf("The area of %s is larger than %s.",area.getCode(),this.getCode());
+            }
+            else {
+                System.out.printf("The area of %s is equal to %s.",this.getCode(),area.getCode());
+            }
         }
         else {
-            System.out.printf("The area of %s is equal to %s.",this.code,area.getCode());
+            throw new Exception(String.format("The areas of these places cannot be compared"));
         }
     }
 }

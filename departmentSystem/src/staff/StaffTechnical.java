@@ -9,8 +9,7 @@ public class StaffTechnical extends Staff {
     public StaffTechnical(String identificationNumber, String name, String surname, Department department, int workingHours, String taskInformation) {
         super(identificationNumber, name, surname, department, workingHours, taskInformation);
     }
-    //Getter-Setter methods
-
+    //Methods
     public void fixedArea(Area area) throws Exception{
         if (!this.getWorkingPlaces().contains(area)) {
             throw new Exception(String.format("The area %s is not allowed for %s %s", area.getCode(), this.getName(), this.getSurname()));

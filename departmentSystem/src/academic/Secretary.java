@@ -2,8 +2,10 @@ package academic;
 
 import area.Area;
 import area.AreaAmphi;
+import area.AreaGarden;
 import course.CourseInformation;
 import staff.Staff;
+import staff.StaffGarden;
 
 public class Secretary extends Staff {
 
@@ -148,6 +150,14 @@ public class Secretary extends Staff {
             System.out.println("Addition of working place is successful");
         } else {
             throw new Exception(String.format("The staff %s %s has already %s working place", staff.getName(), staff.getSurname(), area.getCode()));
+        }
+    }
+    public void addWorkingPlaceToStaff(StaffGarden gardener, AreaGarden area) throws Exception{
+        if (!gardener.getWorkingPlaces().contains(area)) {
+            gardener.getWorkingPlaces().add(area);
+            System.out.println("Addition of working place is successful");
+        } else {
+            throw new Exception(String.format("The gardener %s %s has already %s working place",gardener.getName(), gardener.getSurname(), area.getCode()));
         }
     }
     public void addAmphiToCourse(Course course, AreaAmphi amphi) throws Exception{

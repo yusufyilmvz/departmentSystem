@@ -4,6 +4,7 @@ import academic.Department;
 import academic.Secretary;
 import area.Area;
 import area.AreaAmphi;
+import area.AreaEntry;
 import area.AreaOffice;
 import staff.Staff;
 import staff.StaffCleaning;
@@ -26,16 +27,17 @@ public class Main {
 		StaffTechnical tecnhicer = new StaffTechnical("123456","ali","veli",computerEngineering,110,"technical");
 		StaffTechnical tecnhicer2 = new StaffTechnical("123456","pınar","veli",computerEngineering,110,"technical");
 
+		AreaEntry ar1 = new AreaEntry("A door");
+		AreaOffice ar2 = new AreaOffice("203",5,2,4);
 
 
 		
 		try {
-			//secretary.addWorkingPlaceToStaff(cleaner1, are1);
-			//secretary.addWorkingPlaceToStaff(cleaner1, are1);
-
+			secretary.addWorkingPlaceToStaff(cleaner1, ar1);
+			secretary.addWorkingPlaceToStaff(cleaner1, ar2);
+			ar1.isLargerThan(ar2);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
 	}
 }

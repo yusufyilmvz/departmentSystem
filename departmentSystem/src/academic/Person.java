@@ -8,7 +8,7 @@ public abstract class Person {
     private Department department;
 
     // Constructors
-    public Person(int id, String identificationNumber, String name, String surname, Department department) {
+    public Person(String identificationNumber, String name, String surname, Department department) {
         this.identificationNumber = identificationNumber;
         this.name = name;
         this.surname = surname;
@@ -43,6 +43,10 @@ public abstract class Person {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     protected void setDepartment(Department department) throws Exception {

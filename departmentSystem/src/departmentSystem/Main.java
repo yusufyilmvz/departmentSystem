@@ -4,7 +4,6 @@ import academic.Department;
 import academic.Secretary;
 import area.Area;
 import area.AreaOffice;
-import staff.Staff;
 import staff.StaffCleaning;
 
 public class Main {
@@ -15,7 +14,13 @@ public class Main {
 
 		StaffCleaning cleaner1 = new StaffCleaning("123456","ali","veli",computerEngineering,120,"temizlik");
 		Area are1 = new AreaOffice("123",4);
-		secretary.addWorkingPacetoStaff(cleaner1,are1);
+		try {
+			secretary.addWorkingPlaceToStaff(cleaner1, are1);
+			secretary.addWorkingPlaceToStaff(cleaner1, are1);
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 	}
 }

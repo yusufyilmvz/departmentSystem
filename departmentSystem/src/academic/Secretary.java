@@ -1,6 +1,7 @@
 package academic;
 
 import area.Area;
+import area.AreaAmphi;
 import course.CourseInformation;
 import staff.Staff;
 
@@ -140,8 +141,28 @@ public class Secretary extends Staff {
             department.setHeadOfDepartment(academician);
         }
     }
-    public void addWorkingPacetoStaff(Staff staff, Area area){
-        staff.getWorkingPlaces().add(area);
+    public void addWorkingPlaceToStaff(Staff staff, Area area) throws Exception{
+        if (!staff.getWorkingPlaces().contains(area)) {
+            staff.getWorkingPlaces().add(area);
+            System.out.println("Addition of working place is successful");
+        } else {
+            throw new Exception(String.format("The staff %s %s has already %s working place", staff.getName(), staff.getSurname(), area.getCode()));
+        }
+    }
+    public void addAmphiToCourse(Course course, AreaAmphi amphi) throws Exception{
+        if (course.getClassLessonGiven() == null) {
+            course.setClassLessonGiven(amphi);
+        } else {
+            throw new Exception(String.format("Additin fail: The course %s has already an amphi", course.getCourseName()));
+        }
+    }
+
+    public void updateAmphiOfCourse(Course course, AreaAmphi amphi) throws Exception {
+        if (course.getClassLessonGiven() != null) {
+            course.setClassLessonGiven(amphi);
+        } else {
+            throw new Exception(String.format("Update fail: The course %s has no an amphi", course.getCourseName()));
+        }
     }
 }
 

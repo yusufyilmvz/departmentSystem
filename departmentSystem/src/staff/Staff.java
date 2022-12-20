@@ -10,16 +10,19 @@ import java.util.ArrayList;
 public abstract class Staff extends Person {
     private int workingHours;
     private String taskInformation;
+    private ArrayList<Area> workingPlaces;
 
     public Staff(String identificationNumber, String name, String surname, Department department, int workingHours, String taskInformation) {
         super(identificationNumber, name, surname, department);
         this.workingHours = workingHours;
         this.taskInformation = taskInformation;
+        workingPlaces = new ArrayList<Area>();
 
     }
 
     public Staff(String identificationNumber, String name, String surname, Department department) {
         super(identificationNumber, name, surname, department);
+        workingPlaces = new ArrayList<Area>();
     }
 
     // Method(s)
@@ -48,5 +51,9 @@ public abstract class Staff extends Person {
 
     public void setTaskInformation(String taskInformation) {
         this.taskInformation = taskInformation;
+    }
+
+    public ArrayList<Area> getWorkingPlaces() {
+        return workingPlaces;
     }
 }

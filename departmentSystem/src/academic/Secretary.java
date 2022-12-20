@@ -1,5 +1,6 @@
 package academic;
 
+import area.Area;
 import course.CourseInformation;
 import staff.Staff;
 
@@ -138,6 +139,9 @@ public class Secretary extends Staff {
         } else {
             department.setHeadOfDepartment(academician);
         }
+    }
+    public void addWorkingPacetoStaffCleaning(Staff staff, Area area){
+        staff.getWorkingPlaces().add(area);
     }
 }
 

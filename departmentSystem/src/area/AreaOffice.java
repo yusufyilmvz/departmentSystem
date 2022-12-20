@@ -6,9 +6,9 @@ public class AreaOffice extends Area{
 
     private Academician academician;
 
-    public AreaOffice(String function,String officeCode,Academician academician,int capacity){
+    public AreaOffice(String function,String officeCode,int capacity){
         super(function,officeCode,capacity);
-        this.academician = academician;
+
     }
 
     //GETTER-SETTER METHODS

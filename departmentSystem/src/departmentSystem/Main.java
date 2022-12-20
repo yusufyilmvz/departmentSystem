@@ -26,19 +26,12 @@ public class Main {
 		StaffTechnical tecnhicer = new StaffTechnical("123456","ali","veli",computerEngineering,110,"technical");
 		StaffTechnical tecnhicer2 = new StaffTechnical("123456","pınar","veli",computerEngineering,110,"technical");
 
-		Area are1 = new AreaOffice("123",4);
-		Area are2 = new AreaOffice("213",4);
-		Area are3 = new AreaOffice("312",4);
 
-		Area amphi1 = new AreaAmphi("204",40);
-		Area amphi2 = new AreaAmphi("205",40);
-		Area amphi3 = new AreaAmphi("206",40);
-		Area amphi4 = new AreaAmphi("207",40);
 
 		
 		try {
-			secretary.addWorkingPlaceToStaff(cleaner1, are1);
-			secretary.addWorkingPlaceToStaff(cleaner1, are1);
+			//secretary.addWorkingPlaceToStaff(cleaner1, are1);
+			//secretary.addWorkingPlaceToStaff(cleaner1, are1);
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

@@ -6,8 +6,8 @@ public class AreaOffice extends Area{
 
     private Academician academician;
 
-    public AreaOffice(String function,String officeCode,int capacity){
-        super(function,officeCode,capacity);
+    public AreaOffice(String officeCode,int capacity){
+        super(officeCode,capacity);
 
     }
 

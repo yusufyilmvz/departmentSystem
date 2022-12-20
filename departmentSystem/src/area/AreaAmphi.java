@@ -8,7 +8,7 @@ public class AreaAmphi extends Area {
 
 
     //Constructor
-    public AreaAmphi(String function,String amphiCode,int capacity){
-        super(function,amphiCode,capacity);
+    public AreaAmphi(String amphiCode,int capacity){
+        super(amphiCode,capacity);
     }
 }

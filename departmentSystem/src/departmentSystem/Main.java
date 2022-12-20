@@ -14,8 +14,8 @@ public class Main {
 		Secretary secretary = new Secretary("98765432100", "Ali", "Veli",computerEngineering);
 
 		StaffCleaning cleaner1 = new StaffCleaning("123456","ali","veli",computerEngineering,120,"temizlik");
-		Area are1 = new AreaOffice("office","123",4);
-		secretary.addWorkingPacetoStaffCleaning(cleaner1,are1);
+		Area are1 = new AreaOffice("123",4);
+		secretary.addWorkingPacetoStaff(cleaner1,are1);
 
 	}
 }

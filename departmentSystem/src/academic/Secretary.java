@@ -140,7 +140,7 @@ public class Secretary extends Staff {
             department.setHeadOfDepartment(academician);
         }
     }
-    public void addWorkingPacetoStaffCleaning(Staff staff, Area area){
+    public void addWorkingPacetoStaff(Staff staff, Area area){
         staff.getWorkingPlaces().add(area);
     }
 }

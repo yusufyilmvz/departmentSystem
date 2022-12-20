@@ -2,7 +2,7 @@ package area;
 
 public class AreaCanteen extends Area{
 
-    public AreaCanteen(String function,int capacity){
-        super(function,capacity);
+    public AreaCanteen(int capacity){
+        super(capacity);
     }
 }

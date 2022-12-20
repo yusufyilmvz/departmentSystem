@@ -13,10 +13,9 @@ public abstract class Area{
         this.code = code;
         this.capacity = capacity;
     }
-    public Area(int capacity)
+    public Area(String code)
     {
-
-        this.capacity = capacity;
+        this.code = code;
     }
     //getter-setter methods
 

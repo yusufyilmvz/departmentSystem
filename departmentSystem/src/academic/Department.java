@@ -15,6 +15,7 @@ public class Department {
     // Constructors
     public Department(int departmentId, String departmentName, Academician headOfDepartment) {
         studentsInDepartment = new ArrayList<Student>();
+        staffsInDepartment = new ArrayList<Staff>();
         this.departmentId = departmentId;
         this.departmentName = departmentName;
         this.headOfDepartment = headOfDepartment;
@@ -22,6 +23,7 @@ public class Department {
 
     public Department(int departmentId, String departmentName) {
         studentsInDepartment = new ArrayList<Student>();
+        staffsInDepartment = new ArrayList<Staff>();
         this.departmentId = departmentId;
         this.departmentName = departmentName;
     }

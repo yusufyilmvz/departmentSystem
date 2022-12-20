@@ -11,7 +11,13 @@ public class StaffTechnical extends Staff {
     }
     //Getter-Setter methods
 
-
+    public void fixedArea(Area area) throws Exception{
+        if (!this.getWorkingPlaces().contains(area)) {
+            throw new Exception(String.format("The area %s is not allowed for %s %s", area.getCode(), this.getName(), this.getSurname()));
+        } else {
+            System.out.printf("The %s was fixed by %s,the cleaner.", this.getName(), area.getCode());
+        }
+    }
     /*
     * ArizaVar
     * ArizaTamirEdildi

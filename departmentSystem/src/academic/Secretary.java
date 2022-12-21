@@ -3,12 +3,11 @@ package academic;
 import area.Area;
 import area.AreaAmphi;
 import area.AreaGarden;
-import course.CourseInformation;
 import staff.Staff;
 import staff.StaffGarden;
 
 public class Secretary extends Staff {
-
+    // Constructors
     public Secretary(String identificationNumber, String name, String surname, Department department, int workingHours, String taskInformation) {
         super(identificationNumber, name, surname, department,  workingHours, taskInformation);
     }
@@ -17,6 +16,7 @@ public class Secretary extends Staff {
         super(identificationNumber, name, surname, department);
     }
 
+    // Methods
     public void updateCourseInstructor(Course course, Academician instructor) throws Exception {
         if (course.getAcademician() == null) {
             throw new Exception(String.format("The course called %s does not have any instructor", course.getCourseName()));
@@ -132,6 +132,8 @@ public class Secretary extends Staff {
     public void setHeadOfDepartment(Department department, Academician academician) throws Exception{
         if (department.getHeadOfDepartment() != null) {
             throw new Exception(String.format("The department called %s has already a head academician: %s %s", department.getDepartmentName(), academician.getName(), academician.getSurname()));
+        } else if (!(academician instanceof Proffesor)) {
+            throw new Exception(String.format("The academician %s %s has not sufficient degree for department %s", academician.getName(), academician.getSurname(), department.getDepartmentName()));
         } else {
             department.setHeadOfDepartment(academician);
         }
@@ -140,6 +142,8 @@ public class Secretary extends Staff {
     public void updateHeadOfDepartment(Department department, Academician academician) throws Exception{
         if (department.getHeadOfDepartment() == null) {
             throw new Exception(String.format("The department called %s has no head academician: %s %s", department.getDepartmentName(), academician.getName(), academician.getSurname()));
+        } else if (!(academician instanceof Proffesor)) {
+            throw new Exception(String.format("The academician %s %s has not suffcient degree for department %s", academician.getName(), academician.getSurname(), department.getDepartmentName()));
         } else {
             department.setHeadOfDepartment(academician);
         }

@@ -1,7 +1,7 @@
 package area;
 
 public class AreaEntry extends Area{
-    //Constructor
+    // Constructor
     public AreaEntry(String code) {
         super(code);
     }

@@ -25,7 +25,6 @@ public class GraduateStudent extends Student{
         return super.toString() + String.format("Degree type: %s\nResearch subject: %s\n", getDegreeType(), getResearchSubject());
     }
 
-
     // Getters-setters
 
     public String getResearchSubject() {
@@ -43,6 +42,5 @@ public class GraduateStudent extends Student{
     public void setDegreeType(DegreeType degreeType) {
         this.degreeType = degreeType;
     }
-
 
 }

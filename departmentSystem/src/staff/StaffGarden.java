@@ -5,9 +5,11 @@ import area.Area;
 import area.AreaGarden;
 
 public class StaffGarden extends Staff {
+    // Constructor
     public StaffGarden(String identificationNumber, String name, String surname, Department department, int workingHours, String taskInformation) {
         super(identificationNumber, name, surname, department, workingHours, taskInformation);
     }
+    // Method(s)
     public void addPlants(AreaGarden area,String plant) throws Exception{
         if (!this.getWorkingPlaces().contains(area)) {
             throw new Exception(String.format("The area %s is not allowed for %s %s", area.getCode(), this.getName(), this.getSurname()));

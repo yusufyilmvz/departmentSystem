@@ -1,6 +1,10 @@
 package departmentSystem;
 
 import academic.*;
+import staff.StaffCleaning;
+import staff.StaffGarden;
+import staff.StaffSecurity;
+import staff.StaffTechnical;
 
 public class Tester {
     public static void main(String[] args) {
@@ -22,11 +26,17 @@ public class Tester {
 
         Secretary secretary = new Secretary("98765432100", "Ali", "Veli", computerEngineering);
 
-        Academician academician = new Academician("15646460", "Uraz", "Yavan", computerEngineering);
-        Academician academician2 = new Academician("15646460", "Ali", "Yavan", computerEngineering);
+        Academician academician = new Proffesor("15646460", "Uraz", "Yavanoğlu", computerEngineering);
+        Academician academician2 = new Instructor("15646460", "Ali", "Yavan", computerEngineering);
+
+        StaffGarden staffGarden = new StaffGarden("5161551", "Ali", "yıldız", computerEngineering, 15, "Plant something");
+        StaffCleaning staffCleaning = new StaffCleaning("5161551", "Ali", "yıldız", computerEngineering, 15, "Clean something");
+        StaffSecurity staffSecurity = new StaffSecurity("5161551", "Ali", "yıldız", computerEngineering, 15, "Guard somewhere");
+        StaffTechnical staffTechnical = new StaffTechnical("5161551", "Ali", "yıldız", computerEngineering, 15, "Repair somewhere");
 
         try {
             secretary.setHeadOfDepartment(computerEngineering, academician);
+
 
             secretary.addGraduateStudentToTheCourse(graduateStudent1, graduateCourse1);
             secretary.addGraduateStudentToTheCourse(graduateStudent1, graduateCourse2);
@@ -36,22 +46,26 @@ public class Tester {
             secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse2);
             secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse3);
 //            undergraduateStudent1.printTakenCoursesWithGrades();
-
+//
             secretary.addCourseToAcademician(graduateCourse1, academician);
             secretary.addCourseToAcademician(graduateCourse2, academician);
             secretary.addCourseToAcademician(graduateCourse3, academician);
 
-//            academician.showGivenCourses();
+            academician.showGivenCourses();
 
             secretary.addCourseToAcademician(undergraduateCourse1, academician2);
             secretary.addCourseToAcademician(undergraduateCourse2, academician2);
             secretary.addCourseToAcademician(undergraduateCourse3, academician2);
-
+//
             academician2.addGradeToStudent(undergraduateStudent1, undergraduateCourse1, 50, 50);
-            academician2.addGradeToStudent(undergraduateStudent1, undergraduateCourse2, 50, 50);
-            academician2.addGradeToStudent(undergraduateStudent1, undergraduateCourse3, 50, 50);
-
-            academician.giveUnderGraduateCertificate(undergraduateStudent1);
+            academician2.addGradeToStudent(undergraduateStudent1, undergraduateCourse2, 70, 70);
+            academician2.addGradeToStudent(undergraduateStudent1, undergraduateCourse3, 90, 90);
+            undergraduateStudent1.printTakenCoursesWithGrades();
+            System.out.println(undergraduateStudent1.getGPA());
+//
+//            academician.giveUnderGraduateCertificate(undergraduateStudent1);
+//            secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse1);
+            computerEngineering.showStudentsInDepartment();
 
 
         } catch (Exception e) {

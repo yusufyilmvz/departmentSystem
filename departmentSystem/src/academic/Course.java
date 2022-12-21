@@ -6,15 +6,16 @@ import area.AreaAmphi;
 import java.util.ArrayList;
 
 public abstract class Course {
+    // Attributes
     private int courseCode;
     private String courseName;
     private int credit;
     private String courseLocation;
     private Academician academician;
     private AreaAmphi classLessonGiven;
-    // Obligatory part
     private ArrayList<Student> students;
 
+    // Constructors
     public Course(int courseCode, String courseName, int credit, String courseLocation, Academician academician) {
         this.courseCode = courseCode;
         this.courseName = courseName;
@@ -24,7 +25,7 @@ public abstract class Course {
         students = new ArrayList<Student>();
     }
 
-    // This constructor contains obligatory attributes
+    // Obligatory constructor
     public Course(int courseCode, String courseName, int credit) {
         this.courseCode = courseCode;
         this.courseName = courseName;
@@ -32,6 +33,7 @@ public abstract class Course {
         students = new ArrayList<Student>();
     }
 
+    // Methods
     public String toString() {
         if (academician == null) {
             return String.format("Course code: %d\tCourse name: %s\tCredit: %d\tCourse Location: %s\tLecturer: %s",

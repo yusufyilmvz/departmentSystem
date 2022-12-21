@@ -49,7 +49,7 @@ public abstract class Person {
         this.id = id;
     }
 
-    protected void setDepartment(Department department) throws Exception {
+    protected void setDepartment(Department department) {
         this.department = department;
     }
 }

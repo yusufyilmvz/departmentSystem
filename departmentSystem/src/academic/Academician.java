@@ -1,12 +1,10 @@
 package academic;
 
-import course.CourseInformation;
-
 import java.util.ArrayList;
 
 
-public class Academician extends Person {
-    // Course list
+public abstract class Academician extends Person {
+    // Attribute(s)
     private ArrayList<Course> courses;
 
 
@@ -23,11 +21,7 @@ public class Academician extends Person {
                 getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName());
     }
 
-    protected ArrayList<Course> getCourses() {
-        return courses;
-    }
-
-    // Obligatory part
+    // Obligatory method
     public void addGradeToStudent(Student student, Course course, float midtermGrade, float finalGrade) throws Exception {
         if (student.isFinished()) {
             throw new Exception(String.format("Grade adding error: the student who is %s %s graduated", student.getName(), student.getSurname()));
@@ -67,13 +61,6 @@ public class Academician extends Person {
 
     }
 
-    public void showCourses() {
-        int i = 0;
-        for (Course course : courses) {
-            System.out.printf("%d-\t", i);
-            System.out.println(course);
-        }
-    }
 
     public void giveUnderGraduateCertificate(UndergraduateStudent student) throws Exception {
         if (student.isFinished()) {
@@ -81,8 +68,8 @@ public class Academician extends Person {
         } else {
             // Controlling the instructor is head of department or not
             if (this == getDepartment().getHeadOfDepartment()) {
-                if (student.getGPA() >= 2 && student.getTakenCourses().size() >= 40) {
-                    student.setFinished(true);
+                if (student.getGPA() >= 2 && student.getTakenCourses().size() >= 3) {
+                    student.assignFinished(true);
                 } else {
                     throw new Exception(String.format("The student who is %s %s does not have required conditions.(at least 40 courses and at least 2.0 grade avarage)", student.getName(), student.getSurname()));
                 }
@@ -102,13 +89,13 @@ public class Academician extends Person {
             if (this == getDepartment().getHeadOfDepartment()) {
                 if (student.getDegreeType().equals(DegreeType.MASTER)) {
                     if (student.getGPA() >= 2.5 && student.getTakenCourses().size() >= 7) {
-                        student.setFinished(true);
+                        student.assignFinished(true);
                     } else {
                         throw new Exception(String.format("The student who is %s %s does not have required conditions.(at least 7 courses and at least 2.5 grade avarage)", student.getName(), student.getSurname()));
                     }
                 } else if (student.getDegreeType().equals(DegreeType.DOCTORAL)) {
                     if (student.getGPA() >= 3.0 && student.getTakenCourses().size() >= 8) {
-                        student.setFinished(true);
+                        student.assignFinished(true);
                     } else {
                         throw new Exception(String.format("The student who is %s %s does not have required conditions.(at least 8 courses and at least 3.0 grade avarage)", student.getName(), student.getSurname()));
                     }
@@ -126,4 +113,10 @@ public class Academician extends Person {
             System.out.println(course);
         }
     }
+
+    // Getter(s)
+    protected ArrayList<Course> getCourses() {
+        return courses;
+    }
+
 }

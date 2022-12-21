@@ -9,6 +9,7 @@ public class Department {
     private int departmentId;
     private String departmentName;
     private Academician headOfDepartment;
+    // These lists can be done for all persons/areas
     private ArrayList<Student> studentsInDepartment;
     private ArrayList<Staff> staffsInDepartment;
 
@@ -26,6 +27,20 @@ public class Department {
         staffsInDepartment = new ArrayList<Staff>();
         this.departmentId = departmentId;
         this.departmentName = departmentName;
+    }
+
+    // Methods
+
+    public void showStudentsInDepartment() {
+        for (Student student : studentsInDepartment) {
+            System.out.println(student);
+        }
+    }
+
+    public void showStaffsInDepartment() {
+        for (Staff staff : staffsInDepartment) {
+            System.out.println(staff);
+        }
     }
 
     // Getters-setters

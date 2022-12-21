@@ -10,7 +10,7 @@ public class ResearchFellow extends Academician{
         super(identificationNumber, name, surname, department);
     }
 
-    // Getter setters
+    // Getter(s) - setter(s)
     public String getCurrentResearchTopic() {
         return currentResearchTopic;
     }

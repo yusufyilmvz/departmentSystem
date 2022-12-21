@@ -1,4 +1,4 @@
-package course;
+package academic;
 
 import academic.Course;
 

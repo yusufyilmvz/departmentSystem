@@ -8,10 +8,12 @@ import area.AreaEntry;
 import java.util.ArrayList;
 
 public class StaffSecurity extends Staff {
+    // Constructor
     public StaffSecurity(String identificationNumber, String name, String surname, Department department, int workingHours, String taskInformation) {
         super(identificationNumber, name, surname, department, workingHours, taskInformation);
     }
 
+    // Methods
     public void personEntried(Person person, AreaEntry entry)throws Exception{
         if (!this.getWorkingPlaces().contains(entry)) {
             throw new Exception(String.format("The area %s is not allowed for %s %s", entry.getCode(), this.getName(), this.getSurname()));

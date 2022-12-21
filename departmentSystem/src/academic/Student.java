@@ -1,10 +1,10 @@
 package academic;
 import area.Area;
-import course.CourseInformation;
 
 import java.util.ArrayList;
 
 public abstract class Student extends Person {
+    // Attributes
     private String idNumber;
     private int year;
     private float GPA;
@@ -12,8 +12,8 @@ public abstract class Student extends Person {
     private Area where;
     private ArrayList<CourseInformation> takenCourses;
 
-    // Constructor
-    // Obligatory part - There mustn't null contructor
+    // Constructors
+    // Obligatory constructor - There mustn't null contructor
     public Student(String identificationNumber, String name, String surname, String idNumber, int year) {
         super(identificationNumber, name, surname);
         this.idNumber = idNumber;
@@ -39,11 +39,47 @@ public abstract class Student extends Person {
         this.where = area;
     }
 
-    public void showTakenCourses() {
-        int i = 0;
+    protected void assignFinished(boolean finished) {
+        isFinished = finished;
+    }
+
+    protected void updateGPA() {
+        float totalGrade = 0;
+        int totalCredit = 0;
         for (CourseInformation courseInformation : takenCourses) {
-            System.out.printf("%d-\t", ++i);
-            System.out.println(courseInformation.getCourse());
+            if (courseInformation.getFinalGrade() != -1 && courseInformation.getMidtermGrade() != -1) {
+                totalCredit += courseInformation.getCourse().getCredit();
+                totalGrade += (float)((courseInformation.getFinalGrade() * 0.6) + (courseInformation.getMidtermGrade() * 0.4)) * courseInformation.getCourse().getCredit();
+            }
+        }
+        if (totalGrade != 0 && totalCredit != 0) {
+            GPA = (totalGrade / totalCredit) / 25;
+        } else {
+            GPA = 0;
+        }
+    }
+
+    // Obligatory method
+    public boolean isTakeCourse(Course course) {
+        for (CourseInformation tempCourse : takenCourses) {
+            if (tempCourse.getCourse() == course) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Obligatory part controlling the course that taken by student has a grade or not!!
+    public void printTakenCoursesWithGrades() throws Exception{
+        for (CourseInformation courseInformation : getTakenCourses()) {
+            if (courseInformation.getCourse() == null) {
+                throw new Exception(String.format("Student %s %s has non-existing course", getName(), getSurname()));
+            }
+            else if (courseInformation.getMidtermGrade() == -1 || courseInformation.getFinalGrade() == -1) {
+                throw new Exception(String.format("Some courses that is taken by %s %s have not grade(s)", getName(), getSurname()));
+            } else {
+                System.out.printf("\n%s: midterm: %.2f final: %.2f\n", courseInformation.getCourse().getCourseCode(), courseInformation.getMidtermGrade(), courseInformation.getFinalGrade());
+            }
         }
     }
     // Getters
@@ -71,51 +107,8 @@ public abstract class Student extends Person {
     }
 
     // For finishing degree
-
     public boolean isFinished() {
         return isFinished;
-    }
-
-    protected void setFinished(boolean finished) {
-        isFinished = finished;
-    }
-
-    protected void updateGPA() {
-        float totalGrade = 0;
-        int totalCredit = 0;
-        for (CourseInformation courseInformation : takenCourses) {
-            if (courseInformation.getFinalGrade() != -1 && courseInformation.getMidtermGrade() != -1) {
-                totalCredit += courseInformation.getCourse().getCredit();
-                totalGrade += (float)((courseInformation.getFinalGrade() * 0.6) + (courseInformation.getMidtermGrade() * 0.4)) * courseInformation.getCourse().getCredit();
-            }
-        }
-        if (totalGrade != 0 && totalCredit != 0) {
-            GPA = (totalGrade / totalCredit) / 25;
-        } else {
-            GPA = 0;
-        }
-    }
-    public boolean isTakeCourse(Course course) {
-        for (CourseInformation tempCourse : takenCourses) {
-            if (tempCourse.getCourse() == course) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // Obligatory part controlling the course that taken by student has a grade or not!!
-    public void printTakenCoursesWithGrades() throws Exception{
-        for (CourseInformation courseInformation : getTakenCourses()) {
-            if (courseInformation.getCourse() == null) {
-                throw new Exception(String.format("Student %s %s has non-existing course", getName(), getSurname()));
-            }
-            else if (courseInformation.getMidtermGrade() == -1 || courseInformation.getFinalGrade() == -1) {
-                throw new Exception(String.format("Some courses that is taken by %s %s have not grade(s)", getName(), getSurname()));
-            } else {
-                System.out.printf("%s: midterm: %f final: %f", courseInformation.getCourse().getCourseCode(), courseInformation.getMidtermGrade(), courseInformation.getFinalGrade());
-            }
-        }
     }
 
 }

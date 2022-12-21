@@ -1,6 +1,5 @@
 package academic;
-import academic.Academician;
-import academic.Student;
+
 import area.AreaAmphi;
 
 import java.util.ArrayList;
@@ -41,6 +40,12 @@ public abstract class Course {
         }
         return String.format("Course code: %d\tCourse name: %s\tCredit: %d\tCourse Location: %s\tLecturer: %s %s",
                             getCourseCode(), getCourseName(), getCredit(), getCourseLocation(), getAcademician().getName(), getAcademician().getSurname());
+    }
+
+    public void showStudents() {
+        for (Student student : students) {
+            System.out.printf("\n%s\n", student.getIdNumber());
+        }
     }
 
     // Getter-setters
@@ -96,4 +101,5 @@ public abstract class Course {
     protected ArrayList<Student> getStudents() {
         return students;
     }
+
 }

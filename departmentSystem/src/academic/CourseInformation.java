@@ -1,6 +1,5 @@
 package academic;
 
-import academic.Course;
 
 public class CourseInformation {
     // Variables

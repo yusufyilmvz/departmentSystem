@@ -1,6 +1,5 @@
 package academic;
 
-import java.util.ArrayList;
 
 public class ResearchFellow extends Academician{
     private String currentResearchTopic;

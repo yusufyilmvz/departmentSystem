@@ -2,7 +2,6 @@ package academic;
 
 import java.util.ArrayList;
 
-
 public abstract class Academician extends Person {
     // Attribute(s)
     private ArrayList<Course> courses;

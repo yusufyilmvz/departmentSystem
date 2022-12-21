@@ -21,7 +21,7 @@ public class Tester {
         GraduateStudent graduateStudent1 = new GraduateStudent("123456789120", "Yusuf", "Yılmaz", computerEngineering, "201180021", 2020);
         GraduateStudent graduateStudent2 = new GraduateStudent("123456789120", "Ali", "Yılmaz", computerEngineering, "201180021", 2020);
 
-        UndergraduateStudent undergraduateStudent1 = new UndergraduateStudent("123456789120", "Cengiz", "Yılmaz", computerEngineering, "201180021", 2020);
+        UndergraduateStudent undergraduateStudent1 = new UndergraduateStudent("1234567", "Cengiz", "Yılmaz", computerEngineering, "2011800", 2020);
         UndergraduateStudent undergraduateStudent2 = new UndergraduateStudent("123456789120", "Murat", "Yılmaz", "201180021", 2020);
 
         Secretary secretary = new Secretary("98765432100", "Ali", "Veli", computerEngineering);
@@ -45,6 +45,8 @@ public class Tester {
             secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse1);
             secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse2);
             secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse3);
+
+            secretary.addUndergraduateStudentToTheCourse(undergraduateStudent2, undergraduateCourse1);
 //            undergraduateStudent1.printTakenCoursesWithGrades();
 //
             secretary.addCourseToAcademician(graduateCourse1, academician);
@@ -62,6 +64,10 @@ public class Tester {
             academician2.addGradeToStudent(undergraduateStudent1, undergraduateCourse3, 90, 90);
             undergraduateStudent1.printTakenCoursesWithGrades();
             System.out.println(undergraduateStudent1.getGPA());
+
+            System.out.println("*******************************");
+            undergraduateCourse1.showStudents();
+
 //
 //            academician.giveUnderGraduateCertificate(undergraduateStudent1);
 //            secretary.addUndergraduateStudentToTheCourse(undergraduateStudent1, undergraduateCourse1);

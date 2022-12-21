@@ -5,7 +5,6 @@ import academic.Person;
 import area.Area;
 import area.AreaEntry;
 
-import java.util.ArrayList;
 
 public class StaffSecurity extends Staff {
     // Constructor

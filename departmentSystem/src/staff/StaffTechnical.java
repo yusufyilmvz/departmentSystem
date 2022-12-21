@@ -3,7 +3,6 @@ package staff;
 import academic.Department;
 import area.Area;
 
-import java.util.ArrayList;
 
 public class StaffTechnical extends Staff {
     // Constructor

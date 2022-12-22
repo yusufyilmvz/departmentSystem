@@ -1,6 +1,8 @@
 package academic;
 
+// Person class
 public abstract class Person {
+    // Attributes
     private int id;
     private String identificationNumber;
     private String name;

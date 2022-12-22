@@ -2,6 +2,7 @@ package area;
 
 import academic.Academician;
 
+// AreaOffice class extends Area clas
 public class AreaOffice extends Area{
     // Attribute
     private Academician academician;

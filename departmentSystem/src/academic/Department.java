@@ -4,6 +4,7 @@ import staff.Staff;
 
 import java.util.ArrayList;
 
+// Department class
 public class Department {
     // Attributes
     private int departmentId;
@@ -31,12 +32,14 @@ public class Department {
 
     // Methods
 
+    // Shows students in the department
     public void showStudentsInDepartment() {
         for (Student student : studentsInDepartment) {
             System.out.println(student);
         }
     }
 
+    // Shows staffs in the department
     public void showStaffsInDepartment() {
         for (Staff staff : staffsInDepartment) {
             System.out.println(staff);

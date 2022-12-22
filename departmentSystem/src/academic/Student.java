@@ -3,6 +3,7 @@ import area.Area;
 
 import java.util.ArrayList;
 
+// Student class extends Person class
 public abstract class Student extends Person {
     // Attributes
     private String idNumber;
@@ -35,14 +36,17 @@ public abstract class Student extends Person {
                 getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName(), getIdNumber(), getYear());
     }
 
+    // Provides student where student want to go
     public void goTo(Area area) {
         this.where = area;
     }
 
+    // Graduates the student. This method is used by head of the deparment
     protected void assignFinished(boolean finished) {
         isFinished = finished;
     }
 
+    // Updates GPA of the student after entering course grades of the students. This method is used by academician
     protected void updateGPA() {
         float totalGrade = 0;
         int totalCredit = 0;
@@ -60,6 +64,7 @@ public abstract class Student extends Person {
     }
 
     // Obligatory method
+    // Controls the student has the course or not
     public boolean isTakeCourse(Course course) {
         for (CourseInformation tempCourse : takenCourses) {
             if (tempCourse.getCourse() == course) {
@@ -70,6 +75,7 @@ public abstract class Student extends Person {
     }
 
     // Obligatory part controlling the course that taken by student has a grade or not!!
+    // Prints taken courses with grades of the course
     public void printTakenCoursesWithGrades() throws Exception{
         for (CourseInformation courseInformation : getTakenCourses()) {
             if (courseInformation.getCourse() == null) {

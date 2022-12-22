@@ -1,5 +1,6 @@
 package academic;
 
+// Undergraduate course extends Student course
 public class UndergraduateStudent extends Student{
     // Constructors
     // Obligatory constructor

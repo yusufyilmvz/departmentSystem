@@ -1,6 +1,6 @@
 package academic;
 
-
+// CourseInformation contains course reference and student grades of the course
 public class CourseInformation {
     // Variables
     private Course course;

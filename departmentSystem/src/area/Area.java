@@ -1,5 +1,6 @@
 package area;
 
+// Area class
 public abstract class Area{
     // Attributes
     private String code;
@@ -15,14 +16,24 @@ public abstract class Area{
         this.height = height;
     }
 
+    public Area(String code)
+    {
+        this.code = code;
+    }
+
     // Methods
     @Override
     public String toString() {
         return "Area{" +
                 "code='" + code + '\'' +
                 ", capacity=" + capacity +
+                ", weight=" + weight +
+                ", height=" + height +
                 '}';
     }
+
+
+    // Calculates total area of the area
     public int calculateArea()throws Exception {
         if (this.getWeight() == 0 || this.getHeight() == 0){
             throw new Exception(String.format("There cannot be any area in %s",this.getCode()));
@@ -30,6 +41,8 @@ public abstract class Area{
         System.out.printf("The area of %s is %d square meters",this.getCode(),this.getWeight()*this.getHeight());
         return this.getWeight()*this.getHeight();
     }
+
+    // Compares the areas in terms of area size
     public void isLargerThan(Area area)throws Exception{
         if (this.calculateArea() != 0 && area.calculateArea() != 0){
             if (this.calculateArea()>area.calculateArea()){
@@ -46,10 +59,7 @@ public abstract class Area{
             throw new Exception(String.format("The areas of these places cannot be compared"));
         }
     }
-    public Area(String code)
-    {
-        this.code = code;
-    }
+
 
     // getter-setter methods
     public String getCode() {

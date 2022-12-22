@@ -4,6 +4,7 @@ import area.AreaAmphi;
 
 import java.util.ArrayList;
 
+// Course class
 public abstract class Course {
     // Attributes
     private int courseCode;
@@ -42,9 +43,19 @@ public abstract class Course {
                             getCourseCode(), getCourseName(), getCredit(), getCourseLocation(), getAcademician().getName(), getAcademician().getSurname());
     }
 
+    // Shows students who taken the current course
     public void showStudents() {
         for (Student student : students) {
             System.out.printf("\n%s\n", student.getIdNumber());
+        }
+    }
+
+    // Shows academican of the course
+    public void showAcademicianOfCourse() throws Exception{
+        if (academician != null) {
+            System.out.println(academician);
+        } else {
+            throw new Exception(String.format("The course what has %s course code does not contain academician", getCourseCode()));
         }
     }
 

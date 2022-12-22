@@ -6,7 +6,7 @@ import area.Area;
 
 import java.util.ArrayList;
 
-
+// Staff class extends Person class
 public abstract class Staff extends Person {
     // Attributes
     private int workingHours;
@@ -44,6 +44,13 @@ public abstract class Staff extends Person {
     public String toString() {
         return String.format("Identification number: %s\nName: %s\nSurname: %s\nDepartment: %s\nWorking hours: %d\nTask Information: %s\n",
                                     getIdentificationNumber(), getName(), getSurname(), getDepartment().getDepartmentName(), getWorkingHours(), getTaskInformation());
+    }
+
+    // Shows working places
+    public void showWorkingPlaces() {
+        for (Area area : workingPlaces) {
+            System.out.println(area);
+        }
     }
 
     public int getWorkingHours() {

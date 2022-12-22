@@ -1,5 +1,6 @@
 package area;
 
+// AreaCanteen class extends Area
 public class AreaCanteen extends Area{
     // Attributes
     private int productNumberStockLimit;
@@ -14,6 +15,7 @@ public class AreaCanteen extends Area{
     }
 
     // Methods
+    // Sells the product to consumer
     public void sellProduct(String product) {
         System.out.println(product + "is sold!");
     }

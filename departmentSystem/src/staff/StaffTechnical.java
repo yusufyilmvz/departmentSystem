@@ -3,7 +3,7 @@ package staff;
 import academic.Department;
 import area.Area;
 
-
+// StaffTechnical class extends Staff
 public class StaffTechnical extends Staff {
     // Constructor
     public StaffTechnical(String identificationNumber, String name, String surname, Department department, int workingHours, String taskInformation) {
@@ -11,6 +11,7 @@ public class StaffTechnical extends Staff {
     }
 
     // Method(s)
+    // Controls the area is allowed for staff technical
     public void fixedArea(Area area) throws Exception{
         if (!this.getWorkingPlaces().contains(area)) {
             throw new Exception(String.format("The area %s is not allowed for %s %s", area.getCode(), this.getName(), this.getSurname()));

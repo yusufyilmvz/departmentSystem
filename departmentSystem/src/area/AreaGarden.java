@@ -2,6 +2,7 @@ package area;
 
 import java.util.ArrayList;
 
+// AreaGarden class extends Area
 public class AreaGarden extends Area{
     // Attribute(s)
     private ArrayList<String> plants;

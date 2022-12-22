@@ -1,7 +1,8 @@
 package academic;
 
-
+// ResearchFellow class extends Academician class
 public class ResearchFellow extends Academician{
+    // Attribute(s)
     private String currentResearchTopic;
 
     // Constructor

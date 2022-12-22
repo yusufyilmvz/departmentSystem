@@ -2,15 +2,18 @@ package academic;
 
 import java.util.ArrayList;
 
+// Academician class extends Person class
 public abstract class Academician extends Person {
-    // Attribute(s)
+    // Attributes
     private ArrayList<Course> courses;
+    private ArrayList<String> researchTopics;
 
 
     // Constructor
     public Academician(String identificationNumber, String name, String surname, Department department) {
         super(identificationNumber, name, surname, department);
         courses = new ArrayList<Course>();
+        researchTopics = new ArrayList<String>();
     }
 
     // Methods
@@ -21,6 +24,7 @@ public abstract class Academician extends Person {
     }
 
     // Obligatory method
+    // Adds course grades to the student who is taken the course
     public void addGradeToStudent(Student student, Course course, float midtermGrade, float finalGrade) throws Exception {
         if (student.isFinished()) {
             throw new Exception(String.format("Grade adding error: the student who is %s %s graduated", student.getName(), student.getSurname()));
@@ -60,7 +64,20 @@ public abstract class Academician extends Person {
 
     }
 
+    // Assigns new research topic to academician
+    public void assignResearchTopic(String researchTopic) {
+        researchTopics.add(researchTopic);
+    }
 
+    // Shows research topic(s) of academician
+    public void showResearchTopics() {
+        System.out.printf("Research topic(s) of %s %s\n", getName(), getSurname());
+        for (String temp : researchTopics) {
+            System.out.println(temp);
+        }
+    }
+
+    // Gives certificate to undergraduate students
     public void giveUnderGraduateCertificate(UndergraduateStudent student) throws Exception {
         if (student.isFinished()) {
             throw new Exception(String.format("Certificate giving error: the student who is %s %s already graduated", student.getName(), student.getSurname()));
@@ -80,6 +97,7 @@ public abstract class Academician extends Person {
 
     }
 
+    // Gives certificate to graduate students
     public void giveGraduateCertificate(GraduateStudent student) throws Exception {
         if (student.isFinished()) {
             throw new Exception(String.format("Certificate giving error: the student who is %s %s already graduated", student.getName(), student.getSurname()));
@@ -107,6 +125,7 @@ public abstract class Academician extends Person {
         }
     }
 
+    // Shows courses the academician given
     public void showGivenCourses() {
         for (Course course : getCourses()) {
             System.out.println(course);

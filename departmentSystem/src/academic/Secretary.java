@@ -6,6 +6,7 @@ import area.AreaGarden;
 import staff.Staff;
 import staff.StaffGarden;
 
+// Secretary class extends Staff class
 public class Secretary extends Staff {
     // Constructors
     public Secretary(String identificationNumber, String name, String surname, Department department, int workingHours, String taskInformation) {
@@ -17,6 +18,7 @@ public class Secretary extends Staff {
     }
 
     // Methods
+    // Updates instructor of the course
     public void updateCourseInstructor(Course course, Academician instructor) throws Exception {
         if (course.getAcademician() == null) {
             throw new Exception(String.format("The course called %s does not have any instructor", course.getCourseName()));
@@ -30,6 +32,7 @@ public class Secretary extends Staff {
         }
     }
 
+    // Adds undergraduate student to the undergraduate course
     public void addUndergraduateStudentToTheCourse(UndergraduateStudent student, UndergraduateCourse course) throws Exception {
         if (student.isFinished()) {
             throw new Exception(String.format("Course adding error: the student who is %s %s graduated", student.getName(), student.getSurname()));
@@ -52,6 +55,7 @@ public class Secretary extends Staff {
 
     }
 
+    // Adds graduate student to the graduate course
     public void addGraduateStudentToTheCourse(GraduateStudent student, GraduateCourse course) throws Exception {
         if (student.isFinished()) {
             throw new Exception(String.format("Course adding error: the student who is %s %s graduated", student.getName(), student.getSurname()));
@@ -76,6 +80,7 @@ public class Secretary extends Staff {
 
     // Obligatory part
     // if number of the courses that attended to academician are more than 10, it throws an execption. Otherwise, it adds course to academician
+    // Adds course to the academician
     public void addCourseToAcademician(Course course, Academician academician) throws Exception {
         if (course.getAcademician() == null) {
             if (academician.getCourses().size() >= 10) {
@@ -100,6 +105,7 @@ public class Secretary extends Staff {
         }
     }
 
+    // Sets department to the student
     public void setDepartmentToStudent(Student student, Department department) throws Exception{
         if (student.isFinished()) {
             throw new Exception(String.format("Department setting error: the student who is %s %s graduated", student.getName(), student.getSurname()));
@@ -114,6 +120,7 @@ public class Secretary extends Staff {
 
     }
 
+    // Updates department of the student
     public void updateDepartmentOfStudent(Student student, Department department) throws Exception {
         if (student.isFinished()) {
             throw new Exception(String.format("Department updating error: the student who is %s %s graduated", student.getName(), student.getSurname()));
@@ -129,6 +136,7 @@ public class Secretary extends Staff {
 
     }
 
+    // Sets head of department to deparment
     public void setHeadOfDepartment(Department department, Academician academician) throws Exception{
         if (department.getHeadOfDepartment() != null) {
             throw new Exception(String.format("The department called %s has already a head academician: %s %s", department.getDepartmentName(), academician.getName(), academician.getSurname()));
@@ -139,6 +147,7 @@ public class Secretary extends Staff {
         }
     }
 
+    // Updates head of department of the department
     public void updateHeadOfDepartment(Department department, Academician academician) throws Exception{
         if (department.getHeadOfDepartment() == null) {
             throw new Exception(String.format("The department called %s has no head academician: %s %s", department.getDepartmentName(), academician.getName(), academician.getSurname()));
@@ -148,6 +157,8 @@ public class Secretary extends Staff {
             department.setHeadOfDepartment(academician);
         }
     }
+
+    // Adds working place to the staff
     public void addWorkingPlaceToStaff(Staff staff, Area area) throws Exception{
         if (!staff.getWorkingPlaces().contains(area)) {
             staff.getWorkingPlaces().add(area);
@@ -156,14 +167,8 @@ public class Secretary extends Staff {
             throw new Exception(String.format("The staff %s %s has already %s working place", staff.getName(), staff.getSurname(), area.getCode()));
         }
     }
-    public void addWorkingPlaceToStaff(StaffGarden gardener, AreaGarden area) throws Exception{
-        if (!gardener.getWorkingPlaces().contains(area)) {
-            gardener.getWorkingPlaces().add(area);
-            System.out.println("Addition of working place is successful");
-        } else {
-            throw new Exception(String.format("The gardener %s %s has already %s working place",gardener.getName(), gardener.getSurname(), area.getCode()));
-        }
-    }
+
+    // Adds amphi to the course
     public void addAmphiToCourse(Course course, AreaAmphi amphi) throws Exception{
         if (course.getClassLessonGiven() == null) {
             course.setClassLessonGiven(amphi);
@@ -172,6 +177,7 @@ public class Secretary extends Staff {
         }
     }
 
+    // Updates amphi of the courses
     public void updateAmphiOfCourse(Course course, AreaAmphi amphi) throws Exception {
         if (course.getClassLessonGiven() != null) {
             course.setClassLessonGiven(amphi);
@@ -180,6 +186,7 @@ public class Secretary extends Staff {
         }
     }
 
+    // Updates current working topic of the research fellow
     public void updateWorkingTopicOfResearchFellow(ResearchFellow researchFellow, String workingTopic) {
         researchFellow.setCurrentResearchTopic(workingTopic);
     }

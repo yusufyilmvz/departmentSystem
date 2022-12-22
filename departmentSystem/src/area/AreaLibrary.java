@@ -1,5 +1,6 @@
 package area;
 
+// AreaLibrary class extends Area
 public class AreaLibrary extends Area{
     // Attribute(s)
     private int bookCapacity;

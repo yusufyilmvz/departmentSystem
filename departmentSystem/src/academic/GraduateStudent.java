@@ -1,5 +1,6 @@
 package academic;
 
+// GraduateStudent class extends Student class
 public class GraduateStudent extends Student{
     private DegreeType degreeType; // master or doctoral etc.
     private String researchSubject;

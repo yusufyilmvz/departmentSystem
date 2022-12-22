@@ -1,5 +1,6 @@
 package academic;
 
+// UndergraduateCourse class extends Course class
 public class UndergraduateCourse extends Course{
     // Constructors
     public UndergraduateCourse(int courseCode, String courseName, int credit, String courseLocation, Academician academician) {

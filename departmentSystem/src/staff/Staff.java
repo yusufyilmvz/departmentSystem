@@ -6,13 +6,13 @@ import area.Area;
 
 import java.util.ArrayList;
 
-// Staff class extends Person class
+// Staff abstract class extends Person class
 public abstract class Staff extends Person {
     // Attributes
-    private int workingHours;
-    private String taskInformation;
-    private double salary;
-    private ArrayList<Area> workingPlaces;
+    private int workingHours; // working hours of the staff
+    private String taskInformation; // Task information of the staff
+    private double salary; // Salary amount of the Staff
+    private ArrayList<Area> workingPlaces; // Working(allowed) places of the staff
 
     // Constructors
     public Staff(String identificationNumber, String name, String surname, Department department, int workingHours, String taskInformation) {

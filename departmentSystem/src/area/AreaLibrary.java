@@ -3,7 +3,7 @@ package area;
 // AreaLibrary class extends Area
 public class AreaLibrary extends Area{
     // Attribute(s)
-    private int bookCapacity;
+    private int bookCapacity; // Book capacity of the library
 
     //Constructors
     public AreaLibrary(String code, int capacity,int weight,int height) {

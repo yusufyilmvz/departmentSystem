@@ -188,6 +188,15 @@ public class Secretary extends Staff {
     public void updateWorkingTopicOfResearchFellow(ResearchFellow researchFellow, String workingTopic) {
         researchFellow.setCurrentResearchTopic(workingTopic);
     }
+
+    // Decides salary amount of the staff
+    public void determineSalartOfStaff(Staff staff, double salary) throws Exception{
+        if (salary < 8500) {
+            throw new Exception("Salary can not be less than minimum wage");
+        } else {
+            staff.setSalary(salary);
+        }
+    }
 }
 
 

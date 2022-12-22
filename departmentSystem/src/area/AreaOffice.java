@@ -5,7 +5,7 @@ import academic.Academician;
 // AreaOffice class extends Area clas
 public class AreaOffice extends Area{
     // Attribute
-    private Academician academician;
+    private Academician academician; // The academician who owns the office(AreaOffice)
 
     // Constructor
     public AreaOffice(String officeCode,int capacity,int weight,int height){

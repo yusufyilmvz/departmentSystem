@@ -2,8 +2,9 @@ package academic;
 
 // GraduateStudent class extends Student class
 public class GraduateStudent extends Student{
-    private DegreeType degreeType; // master or doctoral etc.
-    private String researchSubject;
+    // master or doctoral etc.
+    private DegreeType degreeType; // Degree type of the graduate student
+    private String researchSubject; // Research subject of the graduate student
 
     // Constructors
     public GraduateStudent(String identificationNumber, String name, String surname, Department department, String idNumber, int year, DegreeType degreeType, String researchSubject) {

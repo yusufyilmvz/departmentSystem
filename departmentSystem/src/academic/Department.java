@@ -7,12 +7,12 @@ import java.util.ArrayList;
 // Department class
 public class Department {
     // Attributes
-    private int departmentId;
-    private String departmentName;
-    private Academician headOfDepartment;
+    private int departmentId; // ID information of the department
+    private String departmentName; // Name of the department
+    private Academician headOfDepartment; // The academician who is head of the department
     // These lists can be done for all persons/areas
-    private ArrayList<Student> studentsInDepartment;
-    private ArrayList<Staff> staffsInDepartment;
+    private ArrayList<Student> studentsInDepartment; // Students in the department
+    private ArrayList<Staff> staffsInDepartment; // Staffs in the department
 
     // Constructors
     public Department(int departmentId, String departmentName, Academician headOfDepartment) {

@@ -3,15 +3,15 @@ import area.Area;
 
 import java.util.ArrayList;
 
-// Student class extends Person class
+// Student abstract class extends Person class
 public abstract class Student extends Person {
     // Attributes
-    private String idNumber;
-    private int year;
-    private float GPA;
-    private boolean isFinished;
-    private Area where;
-    private ArrayList<CourseInformation> takenCourses;
+    private String idNumber; // ID number of the student
+    private int year; // Entroll year of the student
+    private float GPA; // Grade point avarage of the student
+    private boolean isFinished; // The student is graduated or not
+    private Area where; // Current location of the student (can go any area of the system thanks to goTo method)
+    private ArrayList<CourseInformation> takenCourses; // Courses that are taken by the student
 
     // Constructors
     // Obligatory constructor - There mustn't null contructor

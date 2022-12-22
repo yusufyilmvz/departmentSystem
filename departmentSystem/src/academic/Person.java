@@ -1,13 +1,13 @@
 package academic;
 
-// Person class
+// Person abstract class
 public abstract class Person {
     // Attributes
-    private int id;
-    private String identificationNumber;
-    private String name;
-    private String surname;
-    private Department department;
+    private int id; // ID information of the person
+    private String identificationNumber; // Identification number of the person
+    private String name; // Name of the person
+    private String surname; // Surname of the person
+    private Department department; // Department of the person(computer engineering etc.)
 
     // Constructors
     public Person(String identificationNumber, String name, String surname, Department department) {

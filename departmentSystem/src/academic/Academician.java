@@ -2,11 +2,11 @@ package academic;
 
 import java.util.ArrayList;
 
-// Academician class extends Person class
+// Academician abstract class extends Person class
 public abstract class Academician extends Person {
     // Attributes
-    private ArrayList<Course> courses;
-    private ArrayList<String> researchTopics;
+    private ArrayList<Course> courses; // Given courses by the academician
+    private ArrayList<String> researchTopics; // research topics of the academician
 
 
     // Constructor

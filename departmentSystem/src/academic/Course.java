@@ -4,16 +4,16 @@ import area.AreaAmphi;
 
 import java.util.ArrayList;
 
-// Course class
+// Course abstract class
 public abstract class Course {
     // Attributes
-    private int courseCode;
-    private String courseName;
-    private int credit;
-    private String courseLocation;
-    private Academician academician;
-    private AreaAmphi classLessonGiven;
-    private ArrayList<Student> students;
+    private int courseCode; // Code of the course
+    private String courseName; // Name of the course
+    private int credit; // Credit amount of the course
+    private String courseLocation; // Location of the course
+    private Academician academician; // the academician who gives this course
+    private AreaAmphi classLessonGiven; // the amphi where the lesson is taught
+    private ArrayList<Student> students; // students who are taken the course
 
     // Constructors
     public Course(int courseCode, String courseName, int credit, String courseLocation, Academician academician) {

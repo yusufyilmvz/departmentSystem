@@ -2,10 +2,10 @@ package academic;
 
 // CourseInformation contains course reference and student grades of the course
 public class CourseInformation {
-    // Variables
-    private Course course;
-    private float midtermGrade;
-    private float finalGrade;
+    // Attributes
+    private Course course; // Current course that can be graded
+    private float midtermGrade; // Midterm grade of the student who is taken the course
+    private float finalGrade; // Final grade of the student who is taken the course
 
     // Constructor
 

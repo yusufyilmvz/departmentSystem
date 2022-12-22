@@ -2,8 +2,8 @@ package area;
 
 // AreaCanteen class extends Area
 public class AreaCanteen extends Area{
-    // Attributes
-    private int productNumberStockLimit;
+    // Attribute(s)
+    private int productNumberStockLimit; // Stock amount limit of the canteen
     // Constructors
     public AreaCanteen(String code, int capacity,int weight,int height){
         super(code,capacity,weight,height);

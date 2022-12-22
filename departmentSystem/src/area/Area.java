@@ -1,12 +1,12 @@
 package area;
 
-// Area class
+// Area abstract class
 public abstract class Area{
     // Attributes
-    private String code;
-    private int capacity;
-    private int weight;
-    private int height;
+    private String code; // Code information of the area
+    private int capacity; // Capacity of the area
+    private int weight; // Weight information of the area
+    private int height; // Height information of the area
 
     // Constructors
     public Area(String code, int capacity, int weight, int height) {

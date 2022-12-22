@@ -2,9 +2,7 @@ package academic;
 
 import area.Area;
 import area.AreaAmphi;
-import area.AreaGarden;
 import staff.Staff;
-import staff.StaffGarden;
 
 // Secretary class extends Staff class
 public class Secretary extends Staff {
